@@ -11,7 +11,7 @@
       "choices": [
         {
           "id": "permit",
-          "text": "Take the pass：OK, I'll be right there.",
+          "text": "Take the pass:OK, I'll be right there.",
           "when": {
             "var": "has_pass",
             "equals": false
