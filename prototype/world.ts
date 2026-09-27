@@ -531,7 +531,7 @@ export class MemoryWorld {
   recording(eventCount?: number) {
     if (!this.content) throw new Error('Recording requires a content-driven world');
     if (eventCount === undefined) {
-      if (!this.flushSteps()) throw new Error('录制内存容量已满，请先保存已有事件。');
+      if (!this.flushSteps()) throw new Error('Recording memory is full. Save existing events first.');
       eventCount = this.events.length;
     }
     if (
@@ -584,7 +584,7 @@ export class MemoryWorld {
         : { ok: false, error: 'requestId already used for another command' };
     }
     if (this.capacityReached || !this.flushSteps())
-      return { ok: false, error: '录制内存容量已满，当前运行已暂停。' };
+      return { ok: false, error: 'Recording memory is full; the current run is paused.' };
     const draft = this.inspect();
     let result: Result;
     let facing: number | undefined;
@@ -625,7 +625,7 @@ export class MemoryWorld {
           command.hours !== undefined &&
           !choice.effects.some((e) => e.op === 'sleep' && 'selectHours' in e)
         )
-          throw new Error('此选项不支持自选睡眠时长');
+          throw new Error('This option does not support custom sleep duration');
         this.applyChoice(draft, entity, choice, command.hours);
         if (choice.opens === undefined)
           this.progressTasks(draft, {
@@ -641,22 +641,22 @@ export class MemoryWorld {
           draft.activeEntity !== targetId ||
           !this.nearby().some((e) => e.id === targetId)
         )
-          throw new Error('请先与商人交谈');
+          throw new Error('Talk to the merchant first');
         if (command.revision !== draft.interactionRevision)
-          throw new Error('交易状态已更新，请重试');
+          throw new Error('Trade state updated, please retry');
         const shops = abilitySettings(this.content).shops;
         const offer =
           shops && Object.hasOwn(shops, targetId)
             ? shops[targetId].offers.find((o) => o.item === itemId)
             : undefined;
-        if (!offer || !draft.commerce) throw new Error('商人不交易这件物品');
+        if (!offer || !draft.commerce) throw new Error('The merchant does not trade this item');
         const owned = this.itemQuantity(command.item);
         const stock = draft.commerce.stock[command.target][command.item];
         const buying = command.type === 'buy';
         const amount = (buying ? offer.buySeconds : offer.sellSeconds) * command.quantity;
-        if (buying && stock < command.quantity) throw new Error('商店库存不足');
-        if (!buying && owned < command.quantity) throw new Error('背包数量不足');
-        if (buying && draft.balance < amount) throw new Error('生命余额不足');
+        if (buying && stock < command.quantity) throw new Error('Insufficient shop stock');
+        if (!buying && owned < command.quantity) throw new Error('Not enough in backpack');
+        if (buying && draft.balance < amount) throw new Error('Insufficient life balance');
         const inventory = owned + (buying ? command.quantity : -command.quantity);
         const remaining = stock + (buying ? -command.quantity : command.quantity);
         const balance = draft.balance + (buying ? -amount : amount);
@@ -666,7 +666,7 @@ export class MemoryWorld {
           inventory > 9999 ||
           remaining > 9999
         )
-          throw new Error('交易超出余额或数量上限');
+          throw new Error('Trade exceeds balance or quantity limit');
         draft.balance = balance;
         if (inventory) draft.commerce.inventory[command.item] = inventory;
         else delete draft.commerce.inventory[command.item];
@@ -679,7 +679,7 @@ export class MemoryWorld {
         draft.balance -= 1800;
         draft.npc.reply = 'Room service confirmed. Cost: 0:30:00.';
       } else if (command.type === 'setClockSpeed') {
-        if (!draft.clock) throw new Error('当前存档未启用分段时钟');
+        if (!draft.clock) throw new Error('Segmented clock not enabled for this save');
         draft.clock.elapsedMs = Math.floor(
           (draft.clock.elapsedMs * command.seconds) / draft.clock.realSecondsPerTick,
         );
@@ -691,9 +691,9 @@ export class MemoryWorld {
       } else if (command.type === 'teleport') {
         const { sceneId, x, y } = command;
         const scene = this.content?.scenes.find((candidate) => candidate.id === sceneId);
-        if (!scene) throw new Error(`未知场景: ${sceneId}`);
+        if (!scene) throw new Error(`Unknown scene: ${sceneId}`);
         if (x < 0 || x >= scene.map.width || y < 0 || y >= scene.map.height)
-          throw new Error('坐标超出场景范围');
+          throw new Error('Coordinates out of scene bounds');
         draft.sceneId = scene.id;
         draft.player = { x, y };
         draft.moving = null;
@@ -706,7 +706,7 @@ export class MemoryWorld {
         if (draft.storyTime >= 24 * 3600) throw new Error('The story has reached midnight');
         this.advanceStoryClock(draft, 3600);
       } else if (command.type === 'move') {
-        if (draft.seated) throw new Error('请先起身');
+        if (draft.seated) throw new Error('Please stand up first');
         if (draft.dialogue) throw new Error('Close dialogue before moving');
         if (draft.moving) throw new Error('Player is moving; advance simulation first');
         const target = { x: draft.player.x + command.dx, y: draft.player.y + command.dy };
@@ -722,7 +722,7 @@ export class MemoryWorld {
         if (portal) {
           const interaction = this.content!.story.interactions[portal.id];
           const choice = interaction?.choices.find((c) => this.conditionMatches(c.when, draft));
-          if (!choice) throw new Error(interaction?.text ?? '入口尚未开放');
+          if (!choice) throw new Error(interaction?.text ?? 'Entrance not yet open');
           this.applyChoice(draft, portal, choice);
         } else {
           const sceneBlocked =
@@ -756,14 +756,14 @@ export class MemoryWorld {
           };
         }
       } else if (command.type === 'interact') {
-        if (draft.seated) throw new Error('请先起身');
+        if (draft.seated) throw new Error('Please stand up first');
         if (draft.moving) throw new Error('Player is moving; advance simulation first');
         if (this.content) {
           const targetId = command.target;
           const entity = this.nearby().find((e) => e.id === targetId);
           if (!entity) throw new Error('Target is out of reach');
           if (entity.seat) {
-            if (this.seatUnavailable(entity.id)) throw new Error('这桌已有客人，请选择空桌');
+            if (this.seatUnavailable(entity.id)) throw new Error('This table is occupied, please choose an empty one');
             if (draft.dialogue) throw new Error('Close dialogue before sitting');
             draft.seated = { entity: entity.id, returnPosition: { ...draft.player } };
             draft.player = { x: entity.position[0], y: entity.position[1] };
@@ -821,7 +821,7 @@ export class MemoryWorld {
         ? this.state
         : { ...this.state, orientation: facing };
     if (!this.record(command, result, next))
-      return { ok: false, error: '录制内存容量已满，当前运行已暂停。' };
+      return { ok: false, error: 'Recording memory is full; the current run is paused.' };
     this.state = next;
     this.requests.set(command.requestId, {
       fingerprint,
@@ -846,7 +846,7 @@ export class MemoryWorld {
     const now = this.gameTime(state);
     if ('selectHours' in effect) {
       if (typeof hours !== 'number' || !Number.isInteger(hours) || hours < 1 || hours > 24)
-        throw new Error('请选择1至24个整小时的睡眠时长');
+        throw new Error('Choose a sleep duration of 1 to 24 whole hours');
       return Math.ceil(now) + hours * 3600;
     }
     return 'seconds' in effect
@@ -866,11 +866,11 @@ export class MemoryWorld {
 
   private waitUntil(draft: State, time: number) {
     if (!this.content) throw new Error('Waiting requires content');
-    if (draft.moving || draft.dialogue) throw new Error('请先结束移动或交谈');
+    if (draft.moving || draft.dialogue) throw new Error('Finish moving or talking first');
     const seconds = time - draft.storyTime;
     if (!Number.isSafeInteger(seconds) || seconds < 1 || seconds > 604800)
-      throw new Error('只能等待未来1秒至7天');
-    if (draft.balance < seconds) throw new Error('剩余生命不足以等待到该时刻');
+      throw new Error('Can only wait 1 second to 7 days into the future');
+    if (draft.balance < seconds) throw new Error('Not enough remaining life to wait until then');
     const start = draft.time,
       story = draft.storyTime;
     const period = (draft.clock?.realSecondsPerTick ?? 1) * 1000,
@@ -878,7 +878,7 @@ export class MemoryWorld {
       pending = draft.clock?.elapsedMs ?? 0;
     const duration = Math.ceil((seconds * period - pending * quantum) / quantum),
       end = start + duration;
-    if (duration <= 0) throw new Error('目标时刻已在本段累计时间内，请选择更晚的时刻');
+    if (duration <= 0) throw new Error('Target time is within this segment; choose a later time');
     if (!Number.isSafeInteger(end)) throw new Error('Simulation time overflow');
     draft.balance -= seconds;
     if (draft.clock) draft.clock.elapsedMs = 0;
@@ -889,7 +889,7 @@ export class MemoryWorld {
     while (draft.time < end) {
       // ponytail: bound work for very slow debug clocks; split longer waits until scheduling is optimized.
       if (draft.clock && ++steps > 200000)
-        throw new Error('等待涉及过多活动，请选择更近的时刻或提高时间流速');
+        throw new Error('Too many activities in the wait period; choose a nearer time or speed up time');
       const phase = pending + draft.time - start - ((draft.storyTime - story) * period) / quantum;
       const next = this.nextWaitTick(draft, end, phase, period / quantum);
       this.advanceStoryClock(
@@ -977,7 +977,7 @@ export class MemoryWorld {
           draft.activeEntity !== entity.id ||
           !this.nearby().some((e) => e.id === entity.id)
         )
-          throw new Error('请站在床边选择休息');
+          throw new Error('Stand by the bed to rest');
         const time = this.sleepTarget(effect, draft, hours);
         draft.dialogue = false;
         draft.activeEntity = null;
@@ -996,8 +996,8 @@ export class MemoryWorld {
         const quantity =
           (Object.hasOwn(inventory, effect.item) ? inventory[effect.item] : 0) +
           (effect.op === 'take_item' ? -effect.quantity : effect.quantity);
-        if (quantity < 0) throw new Error('未持有足够的任务物品');
-        if (quantity > 9999) throw new Error('背包数量已达上限，请先腾出位置');
+        if (quantity < 0) throw new Error('Not holding enough quest items');
+        if (quantity > 9999) throw new Error('Backpack is full, make room first');
         if (effect.op === 'pickup_item') {
           const actor = draft.entities[entity.id];
           if (
@@ -1007,7 +1007,7 @@ export class MemoryWorld {
             actor.path.length ||
             actor.transit
           )
-            throw new Error('物件已不在原处');
+            throw new Error('The object is no longer there');
           actor.sceneId = '';
         }
         if (quantity) inventory[effect.item] = quantity;
@@ -1148,7 +1148,7 @@ export class MemoryWorld {
 
   // Live simulation steps accumulate timer-only progress until a change, command or save boundary.
   step(ms: number): Result {
-    if (this.capacityReached) return { ok: false, error: '录制内存容量已满，当前运行已暂停。' };
+    if (this.capacityReached) return { ok: false, error: 'Recording memory is full; the current run is paused.' };
     if (!validAdvance(ms) || !Number.isSafeInteger(this.state.time + ms))
       return { ok: false, error: 'Invalid simulation step' };
     const draft = this.inspect();
@@ -1173,7 +1173,7 @@ export class MemoryWorld {
     if (!equal(before, draft) || pending.count === 100000) {
       const { count, ...cause } = pending;
       if (!this.record(cause, { ok: true }, draft))
-        return { ok: false, error: '录制内存容量已满，当前运行已暂停。' };
+        return { ok: false, error: 'Recording memory is full; the current run is paused.' };
       this.pendingAdvance = { type: 'advance', ms: 0, count: 0, steps: [] };
     } else this.pendingAdvance = pending;
     this.state = draft;
@@ -1189,14 +1189,14 @@ export class MemoryWorld {
   }
 
   advance(ms: number, steps?: Advance['steps']): Result {
-    if (this.capacityReached) return { ok: false, error: '录制内存容量已满，当前运行已暂停。' };
+    if (this.capacityReached) return { ok: false, error: 'Recording memory is full; the current run is paused.' };
     if (!validAdvance(ms, steps) || !Number.isSafeInteger(this.state.time + ms)) {
       return {
         ok: false,
         error: 'Advance must be an integer between 1 and 60000 ms within the safe time range',
       };
     }
-    if (!this.flushSteps()) return { ok: false, error: '录制内存容量已满，当前运行已暂停。' };
+    if (!this.flushSteps()) return { ok: false, error: 'Recording memory is full; the current run is paused.' };
     const draft = this.inspect();
     try {
       for (const [duration, count] of steps ?? [[ms, 1]])
@@ -1205,7 +1205,7 @@ export class MemoryWorld {
       return { ok: false, error: (error as Error).message };
     }
     if (!this.record({ type: 'advance', ms, ...(steps ? { steps } : {}) }, { ok: true }, draft))
-      return { ok: false, error: '录制内存容量已满，当前运行已暂停。' };
+      return { ok: false, error: 'Recording memory is full; the current run is paused.' };
     this.state = draft;
     return { ok: true };
   }

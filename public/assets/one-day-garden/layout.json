@@ -6,13 +6,13 @@
   "source": "project-myrmidon-map-prototype/source/imagegen-v2/world.json",
   "sourceLayout": {
     "id": "one-day-garden",
-    "name": "屋顶一天花园",
+    "name": "Rooftop one-day garden",
     "english": "One-Day Garden",
-    "district": "高层天井",
+    "district": "Upper Atrium",
     "kind": "interior",
     "parent": "solarium",
     "level": 3,
-    "description": "枯萎苗床与机械鸟工作台之间，北侧楼梯通往花园维护层。",
+    "description": "Between withered seedbeds and mechanical bird benches, the north stairs lead to the garden maintenance level.",
     "characterScale": 1.6,
     "width": 1536,
     "height": 1024,
@@ -216,7 +216,7 @@
     "exits": [
       {
         "id": "bridge-entry",
-        "name": "栈桥入口",
+        "name": "Skybridge Entrance",
         "at": [
           256,
           809
@@ -237,7 +237,7 @@
       },
       {
         "id": "lift-entry",
-        "name": "服务电梯入口",
+        "name": "Service Lift Entrance",
         "at": [
           1265,
           895
@@ -258,7 +258,7 @@
       },
       {
         "id": "to-vault",
-        "name": "维护层密室",
+        "name": "Maintenance Level Vault",
         "at": [
           769,
           210
@@ -281,7 +281,7 @@
     "anchors": [
       {
         "id": "S6",
-        "name": "屋顶一天花园",
+        "name": "Rooftop one-day garden",
         "at": [
           1182,
           303
@@ -295,7 +295,7 @@
         "npcs": [
           "Iris"
         ],
-        "note": "种子膜苗床、机械鸟工作台、创始章程",
+        "note": "Seed-film beds, mechanical bird benches, founding charter",
         "radius": 70
       }
     ]

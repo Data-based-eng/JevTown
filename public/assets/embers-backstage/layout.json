@@ -6,13 +6,13 @@
   "source": "project-myrmidon-map-prototype/source/imagegen-v2/world.json",
   "sourceLayout": {
     "id": "embers-backstage",
-    "name": "后台 / Lyra 化妆间",
+    "name": "Backstage / Lyra Dressing Room",
     "english": "Backstage",
-    "district": "余烬",
+    "district": "Embers",
     "kind": "interior",
     "parent": "embers-floor",
     "level": 1,
-    "description": "戏服、化妆镜和沙发之间，Lyra 准备下一场演出。",
+    "description": "Among costumes, mirrors, and sofas, Lyra prepare for the next performance.",
     "characterScale": 2.5,
     "width": 1536,
     "height": 1024,
@@ -136,7 +136,7 @@
     "exits": [
       {
         "id": "return",
-        "name": "返回",
+        "name": "Return",
         "at": [
           769,
           921
@@ -159,7 +159,7 @@
     "anchors": [
       {
         "id": "E6",
-        "name": "后台 / Lyra 化妆间",
+        "name": "Backstage / Lyra Dressing Room",
         "at": [
           789,
           352
@@ -170,7 +170,7 @@
         "npcs": [
           "Lyra"
         ],
-        "note": "20:40 约定会面地点",
+        "note": "20:40 Agreed meeting spot",
         "radius": 70
       }
     ]

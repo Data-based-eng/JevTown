@@ -184,7 +184,7 @@
       ],
       "duration": 1000,
       "loop": true,
-      "label": "待命",
+      "label": "Standby",
       "actionId": "idle"
     },
     "talk": {
@@ -196,7 +196,7 @@
       ],
       "duration": 220,
       "loop": true,
-      "label": "回应",
+      "label": "Respond",
       "actionId": "talk"
     },
     "duty-1": {
@@ -208,7 +208,7 @@
       ],
       "duration": 240,
       "loop": true,
-      "label": "点算兑换",
+      "label": "Count redemptions",
       "actionId": "count-exchange"
     },
     "duty-2": {
@@ -220,7 +220,7 @@
       ],
       "duration": 240,
       "loop": true,
-      "label": "校验兑换单",
+      "label": "Validate redemption slips",
       "actionId": "verify-receipt"
     }
   },

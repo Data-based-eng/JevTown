@@ -6,13 +6,13 @@
   "source": "project-myrmidon-map-prototype/source/imagegen-v2/world.json",
   "sourceLayout": {
     "id": "civic-office",
-    "name": "计时所大厅",
+    "name": "Timekeeping OfficeHall",
     "english": "Civic Time Office",
-    "district": "计时所",
+    "district": "Timekeeping Office",
     "kind": "interior",
     "parent": "transit-hall",
     "level": 1,
-    "description": "取号终端与五个服务窗口面向开阔大厅。侧翼通往调解、咨询和归零等候区，北门通往封存区。",
+    "description": "Ticket terminal and five service windows face the open hall. Wings lead to mediation, consult, and Zeroing Waiting Area, north door to Sealed Archive.",
     "characterScale": 2.5,
     "width": 1536,
     "height": 1024,
@@ -235,12 +235,12 @@
     "items": [
       {
         "id": "civic-pen",
-        "name": "身份校验笔",
+        "name": "Identity verification pen",
         "at": [
           841,
           902
         ],
-        "description": "笔身保留着一份校验记录。"
+        "description": "The pen holds a verification record."
       }
     ],
     "occlusions": [
@@ -290,7 +290,7 @@
     "exits": [
       {
         "id": "return",
-        "name": "返回",
+        "name": "Return",
         "at": [
           1480,
           706
@@ -311,7 +311,7 @@
       },
       {
         "id": "to-archive",
-        "name": "封存区",
+        "name": "Sealed Archive",
         "at": [
           1316,
           247
@@ -332,7 +332,7 @@
       },
       {
         "id": "to-mediation",
-        "name": "争议调解室",
+        "name": "Dispute Mediation Room",
         "at": [
           37,
           488
@@ -353,7 +353,7 @@
       },
       {
         "id": "to-zeroing",
-        "name": "归零等候区",
+        "name": "Zeroing Waiting Area",
         "at": [
           37,
           702
@@ -374,7 +374,7 @@
       },
       {
         "id": "to-consult",
-        "name": "合约咨询室",
+        "name": "Contract Consult Room",
         "at": [
           1480,
           488
@@ -397,7 +397,7 @@
     "anchors": [
       {
         "id": "C1",
-        "name": "安检门与身份扫描",
+        "name": "Security gate and identity scan",
         "at": [
           1341,
           659
@@ -407,7 +407,7 @@
           "09a"
         ],
         "npcs": [
-          "陌生老人",
+          "Strange elder",
           "Meridian"
         ],
         "note": "",
@@ -415,7 +415,7 @@
       },
       {
         "id": "C2",
-        "name": "取号与队列",
+        "name": "Ticketing and queues",
         "at": [
           864,
           550
@@ -426,15 +426,15 @@
           "02b"
         ],
         "npcs": [
-          "排队居民",
+          "Queuing resident",
           "Adrian"
         ],
-        "note": "停机队列；多人核验桌 vs 单人终端",
+        "note": "Halted queues; multi-person verification desks vs Single terminal",
         "radius": 70
       },
       {
         "id": "C3",
-        "name": "服务窗口横列",
+        "name": "Row of service windows",
         "at": [
           672,
           339
@@ -447,16 +447,16 @@
           "18a"
         ],
         "npcs": [
-          "实习柜员",
+          "Intern clerk",
           "Adrian",
           "Meridian"
         ],
-        "note": "2 号台录错；4 号台认证；优先窗口；3 号台还笔；查档规则",
+        "note": "2  desk entry error; 4  desk authentication; priority window; 3  desk pen return; archive lookup rules",
         "radius": 70
       },
       {
         "id": "C4",
-        "name": "Meridian 账户终端",
+        "name": "Meridian Account terminal",
         "at": [
           1250,
           768
@@ -467,7 +467,7 @@
         "npcs": [
           "Meridian"
         ],
-        "note": "即时贷款弹窗",
+        "note": "Instant loan popup",
         "radius": 70
       }
     ]

@@ -6,13 +6,13 @@
   "source": "project-myrmidon-map-prototype/source/imagegen-v2/world.json",
   "sourceLayout": {
     "id": "rhea-den",
-    "name": "Rhea 的补时铺（中继器）",
+    "name": "Rhea's Time Top-Up Shop (repeater)",
     "english": "Rhea's Den",
-    "district": "下层回廊",
+    "district": "Lower Corridor",
     "kind": "interior",
     "parent": "low-deck",
     "level": 0,
-    "description": "工具台与中继终端之间，Rhea 继续修补人们剩下的时间。",
+    "description": "Between the workbench and relay terminal, Rhea keep mending what time people have left.",
     "characterScale": 2.5,
     "width": 1536,
     "height": 1024,
@@ -226,7 +226,7 @@
     "exits": [
       {
         "id": "return",
-        "name": "返回",
+        "name": "Return",
         "at": [
           770,
           875
@@ -249,7 +249,7 @@
     "anchors": [
       {
         "id": "L12",
-        "name": "Rhea 的补时铺与中继器",
+        "name": "Rhea's Time Top-Up Shopwith repeater",
         "at": [
           409,
           502
@@ -261,7 +261,7 @@
           "Rhea",
           "Milo"
         ],
-        "note": "Mira 第一段回声；Milo 交出 Finn 的快递芯片",
+        "note": "Mira First echo; Milo Hand over  Finn 's courier chip",
         "radius": 70
       }
     ]

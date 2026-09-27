@@ -6,13 +6,13 @@
   "source": "project-myrmidon-map-prototype/source/imagegen-v2/world.json",
   "sourceLayout": {
     "id": "low-clinic",
-    "name": "基础诊所",
+    "name": "Basic Clinic",
     "english": "Basic Clinic",
-    "district": "下层回廊",
+    "district": "Lower Corridor",
     "kind": "interior",
     "parent": "low-deck",
     "level": 0,
-    "description": "诊疗床、药柜与登记桌组成下层回廊的基础诊所。",
+    "description": "Exam bed, medicine cabinet, and registration desk form Lower Corridor's Basic Clinic.",
     "characterScale": 2.5,
     "width": 1536,
     "height": 1024,
@@ -163,7 +163,7 @@
     "exits": [
       {
         "id": "return",
-        "name": "返回",
+        "name": "Return",
         "at": [
           769,
           919
@@ -186,16 +186,16 @@
     "anchors": [
       {
         "id": "L13",
-        "name": "基础诊所",
+        "name": "Basic Clinic",
         "at": [
           1042,
           598
         ],
         "events": [],
         "npcs": [
-          "值班护士"
+          "Nurse on duty"
         ],
-        "note": "取药委托目标；临时床位",
+        "note": "Medicine pickup target; temporary beds",
         "radius": 70
       }
     ]

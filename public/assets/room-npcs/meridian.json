@@ -184,7 +184,7 @@
       ],
       "duration": 1000,
       "loop": true,
-      "label": "待命",
+      "label": "Standby",
       "actionId": "idle"
     },
     "talk": {
@@ -196,7 +196,7 @@
       ],
       "duration": 220,
       "loop": true,
-      "label": "回应",
+      "label": "Respond",
       "actionId": "talk"
     },
     "duty-1": {
@@ -208,7 +208,7 @@
       ],
       "duration": 240,
       "loop": true,
-      "label": "读取凭证",
+      "label": "Read credentials",
       "actionId": "validate-form"
     },
     "duty-2": {
@@ -220,7 +220,7 @@
       ],
       "duration": 240,
       "loop": true,
-      "label": "发放回执",
+      "label": "Issue receipts",
       "actionId": "issue-ticket"
     }
   },

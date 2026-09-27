@@ -184,7 +184,7 @@
       ],
       "duration": 1000,
       "loop": true,
-      "label": "待命",
+      "label": "Standby",
       "actionId": "idle"
     },
     "talk": {
@@ -196,7 +196,7 @@
       ],
       "duration": 220,
       "loop": true,
-      "label": "回应",
+      "label": "Respond",
       "actionId": "talk"
     },
     "duty-1": {
@@ -208,7 +208,7 @@
       ],
       "duration": 240,
       "loop": true,
-      "label": "擦拭旧物",
+      "label": "Wipe old goods",
       "actionId": "polish-object"
     },
     "duty-2": {
@@ -220,7 +220,7 @@
       ],
       "duration": 240,
       "loop": true,
-      "label": "展示旧物",
+      "label": "Display old goods",
       "actionId": "present-object"
     }
   },

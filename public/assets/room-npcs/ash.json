@@ -184,7 +184,7 @@
       ],
       "duration": 1000,
       "loop": true,
-      "label": "待命",
+      "label": "Standby",
       "actionId": "idle"
     },
     "talk": {
@@ -196,7 +196,7 @@
       ],
       "duration": 220,
       "loop": true,
-      "label": "回应",
+      "label": "Respond",
       "actionId": "talk"
     },
     "duty-1": {
@@ -208,7 +208,7 @@
       ],
       "duration": 240,
       "loop": true,
-      "label": "紧固接头",
+      "label": "Tighten fittings",
       "actionId": "tighten-fitting"
     },
     "duty-2": {
@@ -220,7 +220,7 @@
       ],
       "duration": 240,
       "loop": true,
-      "label": "检查零件",
+      "label": "Inspect parts",
       "actionId": "inspect-part"
     }
   },

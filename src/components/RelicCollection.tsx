@@ -28,7 +28,7 @@ export default function RelicCollection({
           <button
             key={slot}
             aria-pressed={slot === selectedSlot}
-            aria-label={`${item?.name ?? 'Unknown Relic'}, slot  ${slot}，Clue ${clues.length}  clues`}
+            aria-label={`${item?.name ?? 'Unknown Relic'}, slot  ${slot}, Clue ${clues.length}  clues`}
             onClick={() => setSelectedSlot(slot)}
           >
             <small className="relic-slot-number">{String(slot).padStart(2, '0')}</small>

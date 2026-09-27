@@ -3,7 +3,7 @@
   "meta": {
     "id": "solarium-demo",
     "title": "Solarium, a flow check",
-    "description": "Five agents on dev's 高层天井 map. Authored to exercise walk/decide/invite/converse end to end on a dev scene, not to be good fiction. See src/components/AgenticDemo.tsx.",
+    "description": "Five agents on dev's Upper Atrium map. Authored to exercise walk/decide/invite/converse end to end on a dev scene, not to be good fiction. See src/components/AgenticDemo.tsx.",
     "authored_by": "hand",
     "seed": 7
   },

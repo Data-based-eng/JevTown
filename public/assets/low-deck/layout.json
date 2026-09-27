@@ -8,29 +8,50 @@
     {
       "id": "door-tag-317",
       "image": "door-tag-317.png",
-      "position": [262, 211],
-      "size": [32, 12],
-      "footpoint": [16, 12],
+      "position": [
+        262,
+        211
+      ],
+      "size": [
+        32,
+        12
+      ],
+      "footpoint": [
+        16,
+        12
+      ],
       "depth": 0,
       "collision": null,
       "entity": {
         "id": "low-deck.door-tag-317",
-        "name": "317 消磁门牌",
-        "position": [8, 10],
-        "interactionOffsets": [[-1, 1], [1, 1]]
+        "name": "317 Demagnetized door plate",
+        "position": [
+          8,
+          10
+        ],
+        "interactionOffsets": [
+          [
+            -1,
+            1
+          ],
+          [
+            1,
+            1
+          ]
+        ]
       }
     }
   ],
   "source": "project-myrmidon-map-prototype/source/imagegen-v2/world.json",
   "sourceLayout": {
     "id": "low-deck",
-    "name": "下层回廊",
+    "name": "Lower Corridor",
     "english": "Low Deck",
-    "district": "下层回廊",
+    "district": "Lower Corridor",
     "kind": "exterior",
     "parent": null,
     "level": 0,
-    "description": "舱房与公共建筑围绕树下广场。两条地下通道连接街区两端，货运梯通往转运厅。",
+    "description": "Cabins and public buildings ring the tree plaza. Two underground passages connect both ends of the block, Freight Liftleading to Transit Hall.",
     "characterScale": 1.6,
     "width": 1536,
     "height": 1024,
@@ -190,12 +211,12 @@
     "items": [
       {
         "id": "market-receipt",
-        "name": "Mara 的旧收据",
+        "name": "Mara 's old receipt",
         "at": [
           1180,
           862
         ],
-        "description": "一张记录物品去向的旧收据。"
+        "description": "An old receipt recording where items went."
       }
     ],
     "occlusions": [
@@ -297,7 +318,7 @@
     "exits": [
       {
         "id": "to-transit",
-        "name": "货运梯 → 转运厅",
+        "name": "Freight Lift → Transit Hall",
         "at": [
           910,
           278
@@ -318,7 +339,7 @@
       },
       {
         "id": "enter-404",
-        "name": "404 号舱",
+        "name": "Cabin 404",
         "at": [
           230,
           317
@@ -339,7 +360,7 @@
       },
       {
         "id": "enter-kitchen",
-        "name": "公共厨房",
+        "name": "Public Kitchen",
         "at": [
           1260,
           329
@@ -360,7 +381,7 @@
       },
       {
         "id": "enter-rhea",
-        "name": "Rhea 的补时铺",
+        "name": "Rhea's Time Top-Up Shop",
         "at": [
           468,
           340
@@ -381,7 +402,7 @@
       },
       {
         "id": "enter-clinic",
-        "name": "基础诊所",
+        "name": "Basic Clinic",
         "at": [
           644,
           340
@@ -402,7 +423,7 @@
       },
       {
         "id": "laundry-a",
-        "name": "旧洗衣管道（舱房层端）",
+        "name": "Old Laundry Duct (Cabin Deck End)",
         "at": [
           173,
           631
@@ -423,7 +444,7 @@
       },
       {
         "id": "laundry-b",
-        "name": "旧洗衣管道（广场端）",
+        "name": "Old Laundry Duct (Plaza End)",
         "at": [
           1374,
           633
@@ -444,7 +465,7 @@
       },
       {
         "id": "duct-a",
-        "name": "检修捷径（广场端）",
+        "name": "Service shortcut (plaza end)",
         "at": [
           320,
           568
@@ -465,7 +486,7 @@
       },
       {
         "id": "duct-b",
-        "name": "检修捷径（旧物街端）",
+        "name": "Service shortcut (old-goods street end)",
         "at": [
           1194,
           568
@@ -488,7 +509,7 @@
     "anchors": [
       {
         "id": "L1",
-        "name": "404 门口与层叠房门",
+        "name": "404 Doorway and layered doors",
         "at": [
           316,
           379
@@ -502,14 +523,14 @@
         ],
         "npcs": [
           "Ash",
-          "陌生住户"
+          "Strange resident"
         ],
-        "note": "317 门口是 S01 初见位；电缆井第五章打开",
+        "note": "317 The doorway is  S01 first-meeting spot; cable shaft opens in chapter 5",
         "radius": 70
       },
       {
         "id": "L2",
-        "name": "旧洗衣管道岔口",
+        "name": "Old laundry duct junction",
         "at": [
           266,
           634
@@ -520,12 +541,12 @@
         "npcs": [
           "Milo"
         ],
-        "note": "主街 vs 旧洗衣管道",
+        "note": "Main street vs Old laundry duct",
         "radius": 70
       },
       {
         "id": "L3",
-        "name": "旧站台与货运梯",
+        "name": "Old platform and Freight Lift",
         "at": [
           1012,
           334
@@ -536,12 +557,12 @@
         "npcs": [
           "Milo"
         ],
-        "note": "第五章撤离口",
+        "note": "Chapter 5 evacuation exit",
         "radius": 70
       },
       {
         "id": "L4",
-        "name": "厨房前口袋广场",
+        "name": "Pocket plaza before the kitchen",
         "at": [
           1261,
           418
@@ -553,12 +574,12 @@
           "Rowan",
           "Silas"
         ],
-        "note": "公共屏播宵禁令",
+        "note": "Public screens broadcast curfew",
         "radius": 70
       },
       {
         "id": "L5",
-        "name": "Mara 的旧物摊",
+        "name": "Mara 's old-goods stall",
         "at": [
           1203,
           823
@@ -571,12 +592,12 @@
           "Mara",
           "Milo"
         ],
-        "note": "Milo 发出三件并行小事",
+        "note": "Milo Issues three parallel small tasks",
         "radius": 70
       },
       {
         "id": "L6",
-        "name": "旧自动售货机",
+        "name": "Old vending machine",
         "at": [
           705,
           364
@@ -592,7 +613,7 @@
       },
       {
         "id": "L7",
-        "name": "壁画走廊",
+        "name": "Mural corridor",
         "at": [
           466,
           425
@@ -601,14 +622,14 @@
           "14a"
         ],
         "npcs": [
-          "Lyra 旧录音"
+          "Lyra Old recording"
         ],
         "note": "",
         "radius": 70
       },
       {
         "id": "L8",
-        "name": "废料槽",
+        "name": "Scrap chute",
         "at": [
           527,
           962
@@ -617,14 +638,14 @@
           "24a"
         ],
         "npcs": [
-          "仿生雨燕"
+          "Bionic swift"
         ],
         "note": "",
         "radius": 70
       },
       {
         "id": "L9",
-        "name": "检修捷径岔口",
+        "name": "Service shortcut junction",
         "at": [
           368,
           553
@@ -635,19 +656,19 @@
         "npcs": [
           "Rhea"
         ],
-        "note": "照明绕行路 vs 喷汽检修道",
+        "note": "Lighting detour vs Steam service path",
         "radius": 70
       },
       {
         "id": "L10",
-        "name": "冷却柱",
+        "name": "Coolant column",
         "at": [
           112,
           430
         ],
         "events": [],
         "npcs": [],
-        "note": "地标；第五章断电态停机",
+        "note": "Landmark; halted in chapter 5 blackout",
         "radius": 70
       }
     ]

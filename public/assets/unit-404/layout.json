@@ -6,13 +6,13 @@
   "source": "project-myrmidon-map-prototype/source/imagegen-v2/world.json",
   "sourceLayout": {
     "id": "unit-404",
-    "name": "404 号舱",
+    "name": "Cabin 404",
     "english": "Unit 404",
-    "district": "个人空间",
+    "district": "Personal Space",
     "kind": "interior",
     "parent": "low-deck",
     "level": 0,
-    "description": "Mira 留下的住所。继承柜、家务终端 N-07、机械钟和记忆晶体等待查看。",
+    "description": "Mira 's residence. Inheritance locker, domestic terminal N-07, clockwork, and memory crystals await inspection.",
     "characterScale": 3.2,
     "width": 1254,
     "height": 1254,
@@ -145,12 +145,12 @@
     "items": [
       {
         "id": "mira-relic",
-        "name": "Mira 的记忆晶体",
+        "name": "Mira 's memory crystal",
         "at": [
           840,
           705
         ],
-        "description": "晶体保存着一段尚未播放的回声。"
+        "description": "The crystal holds an unplayed echo."
       }
     ],
     "occlusions": [
@@ -180,7 +180,7 @@
     "exits": [
       {
         "id": "return",
-        "name": "返回",
+        "name": "Return",
         "at": [
           625,
           1080
@@ -203,7 +203,7 @@
     "anchors": [
       {
         "id": "U1",
-        "name": "继承柜与 N-07",
+        "name": "Inheritance locker and  N-07",
         "at": [
           650,
           414
@@ -220,14 +220,14 @@
         ],
         "npcs": [
           "N-07",
-          "数字生命"
+          "digital lifeform"
         ],
-        "note": "隐私告知、三权登记卡、回声四、00:00 启动、终局三步选择",
+        "note": "Privacy notice, three-rights registration card, echo four, 00:00 activation, finale three-step choice",
         "radius": 70
       },
       {
         "id": "U2",
-        "name": "Mira 的桌、机械钟与窗台",
+        "name": "Mira 's desk, clockwork, and windowsill",
         "at": [
           922,
           743
@@ -236,12 +236,12 @@
           "26a"
         ],
         "npcs": [],
-        "note": "序幕读刻字；每章末桌面新增物件",
+        "note": "Prologue: read the inscription; new objects appear on the desk at each chapter end",
         "radius": 70
       },
       {
         "id": "U3",
-        "name": "天顶投影膜",
+        "name": "Zenith projection film",
         "at": [
           781,
           671
@@ -252,12 +252,12 @@
         "npcs": [
           "N-07"
         ],
-        "note": "翻面后显示旧洗衣管道入口",
+        "note": "Flip to reveal the old laundry duct entrance",
         "radius": 70
       },
       {
         "id": "U4",
-        "name": "议会地面（第五章态）",
+        "name": "Council floor (chapter 5 state)",
         "at": [
           620,
           651
@@ -271,9 +271,9 @@
           "28c"
         ],
         "npcs": [
-          "全体核心 NPC"
+          "All-core NPC"
         ],
-        "note": "午夜听证",
+        "note": "Midnight hearing",
         "radius": 70
       }
     ]

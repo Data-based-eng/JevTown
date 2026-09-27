@@ -6,13 +6,13 @@
   "source": "project-myrmidon-map-prototype/source/imagegen-v2/world.json",
   "sourceLayout": {
     "id": "embers-floor",
-    "name": "余烬公开赌桌大厅",
+    "name": "EmbersPublic gaming hall",
     "english": "Embers Floor",
-    "district": "余烬",
+    "district": "Embers",
     "kind": "interior",
     "parent": "transit-hall",
     "level": 1,
-    "description": "赌桌围绕中央过道，北侧舞台面向大厅。西侧是休息间，东侧是 Rook 的账房。",
+    "description": "Tables ring the central passage; the north stage faces the hall. West is Rest Area, east is  Rook 's Office.",
     "characterScale": 2.5,
     "width": 1536,
     "height": 1024,
@@ -244,7 +244,7 @@
     "exits": [
       {
         "id": "return",
-        "name": "返回",
+        "name": "Return",
         "at": [
           37,
           718
@@ -265,7 +265,7 @@
       },
       {
         "id": "to-backstage",
-        "name": "后台",
+        "name": "Backstage",
         "at": [
           1095,
           164
@@ -286,7 +286,7 @@
       },
       {
         "id": "to-office",
-        "name": "概念密码门 → Rook 的账房",
+        "name": "Concept-Locked Door → Rook's Office",
         "at": [
           1499,
           393
@@ -307,7 +307,7 @@
       },
       {
         "id": "to-lounge",
-        "name": "休息间",
+        "name": "Rest Area",
         "at": [
           37,
           393
@@ -330,7 +330,7 @@
     "anchors": [
       {
         "id": "E1",
-        "name": "入口门厅 / Flint 岗 / 出口",
+        "name": "Entrance hall / Flint Post / Exit",
         "at": [
           198,
           662
@@ -342,14 +342,14 @@
         ],
         "npcs": [
           "Flint",
-          "作弊者"
+          "Cheater"
         ],
-        "note": "封锁时三门关闭",
+        "note": "All three doors close in lockdown",
         "radius": 70
       },
       {
         "id": "E2",
-        "name": "公开赌桌区",
+        "name": "Public gaming area",
         "at": [
           760,
           553
@@ -364,14 +364,14 @@
         ],
         "npcs": [
           "Rook",
-          "围观赌客"
+          "Spectator gambler"
         ],
-        "note": "记忆牌 vs 时间轮盘；隔间；限时免费桌",
+        "note": "Memory cards vs Time roulette; booths; limited free tables",
         "radius": 70
       },
       {
         "id": "E3",
-        "name": "筹码台与兑时机",
+        "name": "Chip counter and redemption machine",
         "at": [
           543,
           743
@@ -382,14 +382,14 @@
         ],
         "npcs": [
           "Rook",
-          "兑时员"
+          "Time redemption clerk"
         ],
         "note": "",
         "radius": 70
       },
       {
         "id": "E4",
-        "name": "舞台与观众席",
+        "name": "Stage and seating",
         "at": [
           773,
           385
@@ -400,12 +400,12 @@
         "npcs": [
           "Lyra"
         ],
-        "note": "Mira 第三段回声",
+        "note": "Mira Third echo",
         "radius": 70
       },
       {
         "id": "E7",
-        "name": "概念密码门",
+        "name": "Concept-locked door",
         "at": [
           1221,
           411
@@ -416,7 +416,7 @@
         "npcs": [
           "Rook"
         ],
-        "note": "三份观点终端",
+        "note": "Three-viewpoint terminals",
         "radius": 70
       }
     ]

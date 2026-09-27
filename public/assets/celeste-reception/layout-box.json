@@ -6,13 +6,13 @@
   "source": "project-myrmidon-map-prototype/source/imagegen-v2/world.json",
   "sourceLayout": {
     "id": "celeste-reception",
-    "name": "Celeste 宅接待会厅",
+    "name": "Celeste Residence Reception Hall",
     "english": "Celeste's Reception",
-    "district": "高层天井",
+    "district": "Upper Atrium",
     "kind": "interior",
     "parent": "solarium",
     "level": 2,
-    "description": "西侧沙龙与东侧小会客区相对，中央保留开阔的迎客空间。",
+    "description": "West salon faces the east sitting nook; the center keeps an open reception space.",
     "characterScale": 2.5,
     "width": 1536,
     "height": 992,
@@ -181,7 +181,7 @@
     "exits": [
       {
         "id": "return",
-        "name": "返回",
+        "name": "Return",
         "at": [
           752,
           933
@@ -204,7 +204,7 @@
     "anchors": [
       {
         "id": "S3",
-        "name": "Celeste 宅接待会厅",
+        "name": "Celeste Residence Reception Hall",
         "at": [
           430,
           519
@@ -217,10 +217,10 @@
         "npcs": [
           "Celeste",
           "Noel",
-          "陌生收藏者",
-          "侍者"
+          "Strange collector",
+          "Server"
         ],
-        "note": "安静阳台在东侧",
+        "note": "Quiet balcony on the east side",
         "radius": 70
       }
     ],
@@ -242,7 +242,7 @@
     "portals": [
       {
         "id": "return",
-        "name": "返回",
+        "name": "Return",
         "tiles": [
           [
             21,

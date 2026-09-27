@@ -71,7 +71,7 @@ test('manifest loads scenes with entities and multiple stories into independent 
   world.advance(1000);
   const beforeBook = world.taskViews();
   expect(world.execute({ requestId: 'book', type: 'interact', target: 'room.book' }).ok).toBe(true);
-  expect(world.inspect().npc.reply).toContain('纸页');
+  expect(world.inspect().npc.reply).toContain('Page');
   expect(world.taskViews()).toEqual(beforeBook);
   expect(
     world.execute({

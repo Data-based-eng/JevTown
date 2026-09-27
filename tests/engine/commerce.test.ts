@@ -42,7 +42,7 @@ test('shop purchases and sales atomically update time, inventory and stock with 
   expect(world.inspect()).toEqual(bought);
   expect(world.execute({ ...purchase, requestId: 'stale' })).toEqual({
     ok: false,
-    error: '交易状态已更新，请重试',
+    error: 'Trade state updated, please retry',
   });
   expect(world.inspect()).toEqual(bought);
   const restore = world.checkpoint();

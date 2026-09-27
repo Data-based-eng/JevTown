@@ -6,13 +6,13 @@
   "source": "project-myrmidon-map-prototype/source/imagegen-v2/world.json",
   "sourceLayout": {
     "id": "transit-hall",
-    "name": "转运厅",
+    "name": "Transit Hall",
     "english": "Transit Hall",
-    "district": "转运厅",
+    "district": "Transit Hall",
     "kind": "interior",
     "parent": null,
     "level": 1,
-    "description": "西接计时所，东接余烬。北侧私人电梯通往高层，南侧货运梯返回下层。",
+    "description": "West to Timekeeping Office, east to Embers. North side Private Liftleads up; south side Freight LiftReturnlower level.",
     "characterScale": 2.5,
     "width": 1536,
     "height": 1024,
@@ -207,7 +207,7 @@
     "exits": [
       {
         "id": "to-solarium",
-        "name": "私人电梯 → 高层天井",
+        "name": "Private Lift → Upper Atrium",
         "at": [
           770,
           235
@@ -228,7 +228,7 @@
       },
       {
         "id": "to-low",
-        "name": "货运梯 → 下层回廊",
+        "name": "Freight Lift → Lower Corridor",
         "at": [
           766,
           950
@@ -249,7 +249,7 @@
       },
       {
         "id": "to-civic",
-        "name": "计时所",
+        "name": "Timekeeping Office",
         "at": [
           78,
           543
@@ -270,7 +270,7 @@
       },
       {
         "id": "to-embers",
-        "name": "余烬",
+        "name": "Embers",
         "at": [
           1441,
           542
@@ -293,7 +293,7 @@
     "anchors": [
       {
         "id": "T1",
-        "name": "公共状态柱 / 回收倒计时屏",
+        "name": "Public status pillar / Reclaim countdown screen",
         "at": [
           859,
           547
@@ -304,31 +304,31 @@
         "npcs": [
           "Silas"
         ],
-        "note": "回收通知、候选人格播报、封锁公告、临时听证",
+        "note": "Reclaim notices, candidate persona broadcasts, lockdown announcements, ad-hoc hearings",
         "radius": 70
       },
       {
         "id": "T2",
-        "name": "私人电梯",
+        "name": "Private Lift",
         "at": [
           856,
           277
         ],
         "events": [],
         "npcs": [],
-        "note": "第三章前显示需通行证",
+        "note": "Shows pass required before chapter 3",
         "radius": 70
       },
       {
         "id": "T3",
-        "name": "货运梯",
+        "name": "Freight Lift",
         "at": [
           897,
           743
         ],
         "events": [],
         "npcs": [],
-        "note": "第五章断电改走楼梯",
+        "note": "Chapter 5 blackout: take the stairs",
         "radius": 70
       }
     ]

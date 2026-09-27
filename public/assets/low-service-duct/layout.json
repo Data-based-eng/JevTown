@@ -6,13 +6,13 @@
   "source": "project-myrmidon-map-prototype/source/imagegen-v2/world.json",
   "sourceLayout": {
     "id": "low-service-duct",
-    "name": "检修捷径",
+    "name": "Service shortcut",
     "english": "Service Duct",
-    "district": "下层回廊",
+    "district": "Lower Corridor",
     "kind": "interior",
     "parent": "low-deck",
     "level": -1,
-    "description": "两端楼梯连回主街，北侧检修门通向冷却柱机房。",
+    "description": "Stairs at both ends return to main street; the north service door leads to the coolant column room.",
     "characterScale": 2.5,
     "width": 1536,
     "height": 1024,
@@ -145,7 +145,7 @@
     "exits": [
       {
         "id": "west",
-        "name": "广场端出口",
+        "name": "Plaza-end exit",
         "at": [
           157,
           370
@@ -166,7 +166,7 @@
       },
       {
         "id": "east",
-        "name": "旧物街端出口",
+        "name": "Old-goods street exit",
         "at": [
           1379,
           370
@@ -187,7 +187,7 @@
       },
       {
         "id": "to-cooling",
-        "name": "隐藏房间（冷却柱机房）",
+        "name": "Hidden room (coolant column)",
         "at": [
           906,
           341
@@ -210,14 +210,14 @@
     "anchors": [
       {
         "id": "L14",
-        "name": "检修捷径内",
+        "name": "Inside the service shortcut",
         "at": [
           750,
           402
         ],
         "events": [],
         "npcs": [],
-        "note": "05a 结果路径；隐藏房间橱窗",
+        "note": "05a Result path; hidden room display window",
         "radius": 70
       }
     ]

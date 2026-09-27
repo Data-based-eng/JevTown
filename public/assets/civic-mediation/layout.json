@@ -6,13 +6,13 @@
   "source": "project-myrmidon-map-prototype/source/imagegen-v2/world.json",
   "sourceLayout": {
     "id": "civic-mediation",
-    "name": "争议调解室",
+    "name": "Dispute Mediation Room",
     "english": "Mediation Room",
-    "district": "计时所",
+    "district": "Timekeeping Office",
     "kind": "interior",
     "parent": "civic-office",
     "level": 1,
-    "description": "圆桌、材料桌与档案柜，为多方争议留出共同讨论的空间。",
+    "description": "Round table, materials desk, and archive cabinets leave room for multi-party disputes.",
     "characterScale": 2.5,
     "width": 1536,
     "height": 1024,
@@ -145,7 +145,7 @@
     "exits": [
       {
         "id": "return",
-        "name": "返回",
+        "name": "Return",
         "at": [
           1475,
           534
@@ -168,7 +168,7 @@
     "anchors": [
       {
         "id": "C6",
-        "name": "争议调解室",
+        "name": "Dispute Mediation Room",
         "at": [
           748,
           347
@@ -181,7 +181,7 @@
           "Rhea",
           "Silas"
         ],
-        "note": "Silas 的终止执行方案",
+        "note": "Silas 's termination plan",
         "radius": 70
       }
     ]

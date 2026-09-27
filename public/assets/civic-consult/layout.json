@@ -6,13 +6,13 @@
   "source": "project-myrmidon-map-prototype/source/imagegen-v2/world.json",
   "sourceLayout": {
     "id": "civic-consult",
-    "name": "合约咨询室",
+    "name": "Contract Consult Room",
     "english": "Contract Consult",
-    "district": "计时所",
+    "district": "Timekeeping Office",
     "kind": "interior",
     "parent": "civic-office",
     "level": 1,
-    "description": "访客可以在咨询桌前一起阅读合约与账户记录。",
+    "description": "Visitors can read contracts and account records together at the consult desk.",
     "characterScale": 2.5,
     "width": 1536,
     "height": 1024,
@@ -136,7 +136,7 @@
     "exits": [
       {
         "id": "return",
-        "name": "返回",
+        "name": "Return",
         "at": [
           242,
           532
@@ -159,7 +159,7 @@
     "anchors": [
       {
         "id": "C7",
-        "name": "合约咨询室",
+        "name": "Contract Consult Room",
         "at": [
           762,
           456
@@ -170,7 +170,7 @@
         "npcs": [
           "Meridian"
         ],
-        "note": "Meridian 要求提交遗物",
+        "note": "Meridian Requires submitting relics",
         "radius": 70
       }
     ]

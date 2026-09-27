@@ -7,12 +7,12 @@
   "tasks": [
     {
       "id": "learn_movement",
-      "title": "熟悉移动",
-      "description": "使用 WASD 或方向键探索四个方向。",
+      "title": "Learn to move",
+      "description": "Use  WASD  or arrow keys to explore four directions.",
       "steps": [
         {
           "id": "walk",
-          "text": "使用 WASD / 方向键向四个方向移动",
+          "text": "Move with WASD / arrow keys",
           "condition": {
             "event": "movement.completed",
             "collect": "direction",
@@ -41,12 +41,12 @@
     },
     {
       "id": "learn_interaction",
-      "title": "打个招呼",
-      "description": "靠近老黑 N-07，按 E 与他交谈。",
+      "title": "Say hi",
+      "description": "Approach Old Black N-07, Press  E  to talk to him.",
       "steps": [
         {
           "id": "talk",
-          "text": "靠近 N-07，按 E 交谈",
+          "text": "Approach N-07, press E to talk",
           "condition": {
             "event": "interaction.started",
             "where": {
@@ -59,12 +59,12 @@
     },
     {
       "id": "follow_black",
-      "title": "隔壁见",
-      "description": "接过老黑的通行证，跟到共居走廊找他。",
+      "title": "See you next door",
+      "description": "Take Old Black's pass, Follow to Co-living corridorfind him.",
       "steps": [
         {
           "id": "permit",
-          "text": "与老黑交谈，接过通行证。",
+          "text": "Talk to Old Black, Take the pass.",
           "condition": {
             "event": "choice.confirmed",
             "where": {
@@ -76,7 +76,7 @@
         },
         {
           "id": "follow",
-          "text": "向右出门，在共居走廊找到老黑。",
+          "text": "Exit right, At Co-living corridorFind Old Black.",
           "condition": {
             "event": "choice.confirmed",
             "where": {

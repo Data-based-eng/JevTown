@@ -6,13 +6,13 @@
   "source": "project-myrmidon-map-prototype/source/imagegen-v2/world.json",
   "sourceLayout": {
     "id": "celeste-gallery",
-    "name": "展厅与估值台",
+    "name": "Gallery and Appraisal Desk",
     "english": "Gallery & Valuation",
-    "district": "高层天井",
+    "district": "Upper Atrium",
     "kind": "interior",
     "parent": "solarium",
     "level": 2,
-    "description": "六个展柜分列两侧，中央地毯引向尽端的估值台。",
+    "description": "Six display cases line both sides; a central carpet leads to the appraisal desk at the far end.",
     "characterScale": 2.5,
     "width": 1536,
     "height": 992,
@@ -172,18 +172,18 @@
     "items": [
       {
         "id": "gallery-invitation",
-        "name": "展厅邀请函",
+        "name": "Gallery invitation",
         "at": [
           942,
           816
         ],
-        "description": "邀请函上的印章与 Celeste 的收藏有关。"
+        "description": "The invitation seal connects to  Celeste 's collection."
       }
     ],
     "exits": [
       {
         "id": "return",
-        "name": "返回",
+        "name": "Return",
         "at": [
           752,
           933
@@ -206,7 +206,7 @@
     "anchors": [
       {
         "id": "S8",
-        "name": "展厅与估值台",
+        "name": "Gallery and Appraisal Desk",
         "at": [
           753,
           302
@@ -221,10 +221,10 @@
         "npcs": [
           "Celeste",
           "Noel",
-          "估值员",
-          "侍者"
+          "Appraiser",
+          "Server"
         ],
-        "note": "赌场邀请函在此取得",
+        "note": "Casino invitation obtained here",
         "radius": 70
       }
     ],
@@ -246,7 +246,7 @@
     "portals": [
       {
         "id": "return",
-        "name": "返回",
+        "name": "Return",
         "tiles": [
           [
             21,

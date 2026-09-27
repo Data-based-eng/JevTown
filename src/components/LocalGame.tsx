@@ -1430,7 +1430,7 @@ function LoadedLocalGame({
           )}
           {!state.seated && nearby.length > 0 && (
             <>
-              <p>Nearby: {nearby.map((e) => e.name).join('、')}</p>
+              <p>Nearby: {nearby.map((e) => e.name).join(', ')}</p>
               <button
                 disabled={world.seatUnavailable(nearby[0]?.id ?? '')}
                 onClick={() => send({ type: 'interact', target: nearby[0]?.id ?? '' })}

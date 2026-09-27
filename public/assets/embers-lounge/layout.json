@@ -6,13 +6,13 @@
   "source": "project-myrmidon-map-prototype/source/imagegen-v2/world.json",
   "sourceLayout": {
     "id": "embers-lounge",
-    "name": "休息间",
+    "name": "Rest Area",
     "english": "Embers Lounge",
-    "district": "余烬",
+    "district": "Embers",
     "kind": "interior",
     "parent": "embers-floor",
     "level": 1,
-    "description": "赌客圆桌、吧台和沙发，为余烬的喧闹留出一处歇脚地。",
+    "description": "Gambler round tables, bar, and sofas leave Embers's noise a place to rest.",
     "characterScale": 2.5,
     "width": 1536,
     "height": 1024,
@@ -199,7 +199,7 @@
     "exits": [
       {
         "id": "return",
-        "name": "返回",
+        "name": "Return",
         "at": [
           1376,
           521
@@ -222,7 +222,7 @@
     "anchors": [
       {
         "id": "E5",
-        "name": "休息间",
+        "name": "Rest Area",
         "at": [
           770,
           302
@@ -233,7 +233,7 @@
         "npcs": [
           "Rook"
         ],
-        "note": "圆桌 / 侧桌 / 隔音单间",
+        "note": "Round table / Side table / Soundproof booth",
         "radius": 70
       }
     ]

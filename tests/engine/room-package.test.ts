@@ -322,7 +322,7 @@ test('S01 guides all six steps from 404 and finishes only after storing the real
   expect(taskGuidance(content.scenes, world.scene()!, undefined)).toBeUndefined();
   send({ type: 'interact', target: 'unit-404.cabinet' });
   expect(world.choices().some((c) => c.id === 'store_tag')).toBe(false);
-  expect(world.inspect().npc.reply).toContain('已放入此柜');
+  expect(world.inspect().npc.reply).toContain('locker');
   send({ type: 'closeDialogue' });
   const recording = world.recording();
   expect(replayRecording(recording).inspect()).toEqual(world.inspect());

@@ -6,13 +6,13 @@
   "source": "project-myrmidon-map-prototype/source/imagegen-v2/world.json",
   "sourceLayout": {
     "id": "noel-suite",
-    "name": "Noel 的私人厅",
+    "name": "Noel's Private Hall",
     "english": "Noel's Suite",
-    "district": "高层天井",
+    "district": "Upper Atrium",
     "kind": "interior",
     "parent": "solarium",
     "level": 2,
-    "description": "声音终端、床与会客区，构成 Noel 的私人生活空间。",
+    "description": "Audio terminal, bed, and sitting area form  Noel 's private living space.",
     "characterScale": 2.5,
     "width": 1536,
     "height": 1024,
@@ -136,7 +136,7 @@
     "exits": [
       {
         "id": "return",
-        "name": "返回",
+        "name": "Return",
         "at": [
           768,
           906
@@ -159,7 +159,7 @@
     "anchors": [
       {
         "id": "S10",
-        "name": "Noel 的私人厅",
+        "name": "Noel's Private Hall",
         "at": [
           766,
           287

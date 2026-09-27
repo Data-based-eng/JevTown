@@ -6,13 +6,13 @@
   "source": "project-myrmidon-map-prototype/source/imagegen-v2/world.json",
   "sourceLayout": {
     "id": "low-kitchen",
-    "name": "公共厨房",
+    "name": "Public Kitchen",
     "english": "Public Kitchen",
-    "district": "下层回廊",
+    "district": "Lower Corridor",
     "kind": "interior",
     "parent": "low-deck",
     "level": 0,
-    "description": "共享灶台、餐桌和洗涤区，邻居们在这里准备一日三餐。",
+    "description": "Shared stoves, tables, and wash areas where neighbors prepare three meals a day.",
     "characterScale": 2.5,
     "width": 1536,
     "height": 1024,
@@ -154,7 +154,7 @@
     "exits": [
       {
         "id": "return",
-        "name": "返回",
+        "name": "Return",
         "at": [
           773,
           946
@@ -177,7 +177,7 @@
     "anchors": [
       {
         "id": "L11",
-        "name": "公共厨房内",
+        "name": "Public KitchenInside",
         "at": [
           829,
           369
@@ -193,9 +193,9 @@
         "npcs": [
           "Rowan",
           "Milo",
-          "居民"
+          "Resident"
         ],
-        "note": "长桌 / 外带窗；爆裂点；断电冷餐；署名板",
+        "note": "Long table / Takeout window; flashpoint; blackout cold meals; signature board",
         "radius": 70
       }
     ]

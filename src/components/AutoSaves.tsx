@@ -325,8 +325,8 @@ export function useAutoSaves(
                   </strong>
                   <small>{slot.scene}</small>
                   <small>{new Date(slot.savedAt).toLocaleString()}</small>
-                  <small>Active: {slot.tasks?.active.join('、') || 'none'}</small>
-                  <small>Done: {slot.tasks?.completed.join('、') || 'none'}</small>
+                  <small>Active: {slot.tasks?.active.join(', ') || 'none'}</small>
+                  <small>Done: {slot.tasks?.completed.join(', ') || 'none'}</small>
                   <small>
                     File size: 
                     {slot.bytes === undefined ? 'unknown' : `${(slot.bytes / 1048576).toFixed(2)} MiB`}

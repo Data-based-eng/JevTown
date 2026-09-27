@@ -6,13 +6,13 @@
   "source": "project-myrmidon-map-prototype/source/imagegen-v2/world.json",
   "sourceLayout": {
     "id": "civic-zeroing-lounge",
-    "name": "归零等候区",
+    "name": "Zeroing Waiting Area",
     "english": "Zeroing Lounge",
-    "district": "计时所",
+    "district": "Timekeeping Office",
     "kind": "interior",
     "parent": "civic-office",
     "level": 1,
-    "description": "窗下座椅与机械钟之间，是一段安静的等待。",
+    "description": "Between the window seat and the clockwork lies a quiet wait.",
     "characterScale": 2.5,
     "width": 1536,
     "height": 1024,
@@ -145,7 +145,7 @@
     "exits": [
       {
         "id": "return",
-        "name": "返回",
+        "name": "Return",
         "at": [
           1420,
           548
@@ -168,7 +168,7 @@
     "anchors": [
       {
         "id": "C5",
-        "name": "归零等候区",
+        "name": "Zeroing Waiting Area",
         "at": [
           774,
           364
@@ -177,9 +177,9 @@
           "21b"
         ],
         "npcs": [
-          "即将归零的居民"
+          "Resident about to zero out"
         ],
-        "note": "陪完最后五分钟则错过当前窗口",
+        "note": "Staying the last five minutes misses the current window",
         "radius": 70
       }
     ]

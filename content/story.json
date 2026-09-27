@@ -10,11 +10,11 @@
   },
   "interactions": {
     "n07": {
-      "text": "欢迎来到404。领取通行许可后，就可以去走廊看看。",
+      "text": "Welcome to 404. Get your pass, then take a look at the corridor.",
       "choices": [
         {
           "id": "permit",
-          "text": "领取通行许可",
+          "text": "Get pass",
           "effects": [
             {
               "op": "set",
@@ -25,7 +25,7 @@
         },
         {
           "id": "service",
-          "text": "房间服务（支付0:30:00，允许透支）",
+          "text": "Room service (pay 0:30:00, overdraft allowed)",
           "effects": [
             {
               "op": "pay_time",
@@ -36,11 +36,11 @@
       ]
     },
     "room.exit": {
-      "text": "这扇门通向共居走廊。需要通行许可。",
+      "text": "This door leads to the co-living corridor. Pass required.",
       "choices": [
         {
           "id": "enter",
-          "text": "进入走廊",
+          "text": "Enter corridor",
           "when": {
             "var": "has_pass",
             "equals": true
@@ -54,11 +54,11 @@
       ]
     },
     "corridor.return": {
-      "text": "返回你的房间？",
+      "text": "Return to your room?",
       "choices": [
         {
           "id": "return",
-          "text": "返回404",
+          "text": "Return to 404",
           "effects": [
             {
               "op": "travel"
@@ -71,12 +71,12 @@
   "tasks": [
     {
       "id": "welcome",
-      "title": "熟悉小镇",
-      "description": "先熟悉行动方式，再与附近的 N-07 打个招呼。你可以自由探索小镇。",
+      "title": "Get to know the town",
+      "description": "Learn the controls first, then say hi to N-07 nearby. Explore freely.",
       "steps": [
         {
           "id": "walk",
-          "text": "使用 WASD / 方向键向四个方向移动",
+          "text": "Move with WASD / arrow keys",
           "condition": {
             "event": "movement.completed",
             "collect": "direction",
@@ -103,7 +103,7 @@
         },
         {
           "id": "talk",
-          "text": "靠近 N-07，按 E 交谈",
+          "text": "Approach N-07, press E to talk",
           "condition": {
             "event": "interaction.started",
             "where": {

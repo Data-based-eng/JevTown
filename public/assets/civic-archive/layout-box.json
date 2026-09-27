@@ -6,13 +6,13 @@
   "source": "project-myrmidon-map-prototype/source/imagegen-v2/world.json",
   "sourceLayout": {
     "id": "civic-archive",
-    "name": "封存区",
+    "name": "Sealed Archive",
     "english": "Sealed Archive",
-    "district": "计时所",
+    "district": "Timekeeping Office",
     "kind": "interior",
     "parent": "civic-office",
     "level": 1,
-    "description": "档案架、修复台和投影装置保存着暂未公开的记录。",
+    "description": "Shelves, repair benches, and projectors hold records not yet public.",
     "characterScale": 2.5,
     "width": 1536,
     "height": 992,
@@ -154,7 +154,7 @@
     "exits": [
       {
         "id": "return",
-        "name": "返回",
+        "name": "Return",
         "at": [
           769,
           960
@@ -177,7 +177,7 @@
     "anchors": [
       {
         "id": "C8",
-        "name": "封存区",
+        "name": "Sealed Archive",
         "at": [
           891,
           548
@@ -192,7 +192,7 @@
           "Adrian",
           "Meridian"
         ],
-        "note": "Mira 第二段回声；N-07 空白档案；候选人格",
+        "note": "Mira Second echo; N-07 Blank archive; candidate personas",
         "radius": 70
       }
     ],
@@ -214,7 +214,7 @@
     "portals": [
       {
         "id": "return",
-        "name": "返回",
+        "name": "Return",
         "tiles": [
           [
             22,

@@ -6,13 +6,13 @@
   "source": "project-myrmidon-map-prototype/source/imagegen-v2/world.json",
   "sourceLayout": {
     "id": "sky-lobby",
-    "name": "私人电梯厅",
+    "name": "Private Lift Hall",
     "english": "Sky Lobby",
-    "district": "高层天井",
+    "district": "Upper Atrium",
     "kind": "interior",
     "parent": "solarium",
     "level": 2,
-    "description": "私人电梯连接转运厅。接待台、展品与长椅围绕明亮的通行轴。",
+    "description": "Private LiftConnects Transit Hall. Reception desk, exhibits, and benches ring a bright passage axis.",
     "characterScale": 2.5,
     "width": 1536,
     "height": 992,
@@ -172,7 +172,7 @@
     "exits": [
       {
         "id": "return",
-        "name": "返回",
+        "name": "Return",
         "at": [
           769,
           934
@@ -193,7 +193,7 @@
       },
       {
         "id": "lift",
-        "name": "电梯 → 转运厅",
+        "name": "Lift → Transit Hall",
         "at": [
           769,
           274
@@ -216,7 +216,7 @@
     "anchors": [
       {
         "id": "S1",
-        "name": "私人电梯厅 / 通行证生成",
+        "name": "Private Lift Hall / Pass generation",
         "at": [
           501,
           546
@@ -225,9 +225,9 @@
           "04b"
         ],
         "npcs": [
-          "接待员"
+          "Receptionist"
         ],
-        "note": "三分钟等待：展品、询价、灌溉器、长椅",
+        "note": "Three-minute wait: exhibits, price inquiries, irrigator, benches",
         "radius": 70
       }
     ],
@@ -253,7 +253,7 @@
     "portals": [
       {
         "id": "return",
-        "name": "返回",
+        "name": "Return",
         "tiles": [
           [
             22,
@@ -286,7 +286,7 @@
       },
       {
         "id": "lift",
-        "name": "电梯 → 转运厅",
+        "name": "Lift → Transit Hall",
         "tiles": [
           [
             24,

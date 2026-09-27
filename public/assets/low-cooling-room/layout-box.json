@@ -6,13 +6,13 @@
   "source": "project-myrmidon-map-prototype/source/imagegen-v2/world.json",
   "sourceLayout": {
     "id": "low-cooling-room",
-    "name": "冷却柱机房（隐藏房间）",
+    "name": "Coolant column room (hidden)",
     "english": "Cooling Room",
-    "district": "下层回廊",
+    "district": "Lower Corridor",
     "kind": "interior",
     "parent": "low-service-duct",
     "level": -1,
-    "description": "冷却机组与维修台包围着控制终端，隐藏的账线在这里汇合。",
+    "description": "Cooling units and repair benches surround the control terminal; hidden ledger lines converge here.",
     "characterScale": 2.5,
     "width": 1536,
     "height": 928,
@@ -109,7 +109,7 @@
     "exits": [
       {
         "id": "return",
-        "name": "返回",
+        "name": "Return",
         "at": [
           752,
           878
@@ -132,14 +132,14 @@
     "anchors": [
       {
         "id": "L16",
-        "name": "隐藏房间",
+        "name": "Hidden room",
         "at": [
           768,
           407
         ],
         "events": [],
         "npcs": [],
-        "note": "非法账线设备",
+        "note": "Illicit ledger equipment",
         "radius": 70
       }
     ],
@@ -161,7 +161,7 @@
     "portals": [
       {
         "id": "return",
-        "name": "返回",
+        "name": "Return",
         "tiles": [
           [
             22,

@@ -6,13 +6,13 @@
   "source": "project-myrmidon-map-prototype/source/imagegen-v2/world.json",
   "sourceLayout": {
     "id": "embers-back-office",
-    "name": "Rook 的账房",
+    "name": "Rook 's Office",
     "english": "Rook's Back Office",
-    "district": "余烬",
+    "district": "Embers",
     "kind": "interior",
     "parent": "embers-floor",
     "level": 1,
-    "description": "账簿桌、保险柜与谈判桌，藏着 Rook 的另一条账路。",
+    "description": "Ledger desk, safe, and negotiation table hide  Rook 's other ledger route.",
     "characterScale": 2.5,
     "width": 1536,
     "height": 1024,
@@ -145,7 +145,7 @@
     "exits": [
       {
         "id": "return",
-        "name": "返回",
+        "name": "Return",
         "at": [
           62,
           505
@@ -168,7 +168,7 @@
     "anchors": [
       {
         "id": "E8",
-        "name": "Rook 的账房",
+        "name": "Rook 's Office",
         "at": [
           753,
           355
@@ -181,7 +181,7 @@
         "npcs": [
           "Rook"
         ],
-        "note": "三轮交易；赌场账路；解密钥匙",
+        "note": "Three-round trades; casino ledger route; decryption key",
         "radius": 70
       }
     ]

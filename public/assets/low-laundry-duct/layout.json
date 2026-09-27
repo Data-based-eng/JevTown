@@ -6,13 +6,13 @@
   "source": "project-myrmidon-map-prototype/source/imagegen-v2/world.json",
   "sourceLayout": {
     "id": "low-laundry-duct",
-    "name": "旧洗衣管道",
+    "name": "Old laundry duct",
     "english": "Old Laundry Duct",
-    "district": "下层回廊",
+    "district": "Lower Corridor",
     "kind": "interior",
     "parent": "low-deck",
     "level": -1,
-    "description": "旧洗衣房重新开放。穿过中央过道，可以从另一端楼梯回到街区。",
+    "description": "Old laundry room reopened. Cross the central passage to return to the block via the far stairs.",
     "characterScale": 2.5,
     "width": 1536,
     "height": 1024,
@@ -100,18 +100,18 @@
     "items": [
       {
         "id": "laundry-note",
-        "name": "洗衣房记录",
+        "name": "Laundry room records",
         "at": [
           600,
           420
         ],
-        "description": "这条旧管道与主街一样连通两端。"
+        "description": "This old duct connects both ends like the main street."
       }
     ],
     "exits": [
       {
         "id": "west",
-        "name": "舱房层端",
+        "name": "Cabin deck end",
         "at": [
           155,
           362
@@ -132,7 +132,7 @@
       },
       {
         "id": "east",
-        "name": "广场端",
+        "name": "Plaza end",
         "at": [
           1372,
           362
@@ -155,14 +155,14 @@
     "anchors": [
       {
         "id": "L15",
-        "name": "旧洗衣管道内",
+        "name": "Inside the old laundry duct",
         "at": [
           604,
           450
         ],
         "events": [],
         "npcs": [],
-        "note": "16a 结果路径",
+        "note": "16a Result path",
         "radius": 70
       }
     ]

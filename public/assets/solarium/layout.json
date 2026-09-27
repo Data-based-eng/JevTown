@@ -6,13 +6,13 @@
   "source": "project-myrmidon-map-prototype/source/imagegen-v2/world.json",
   "sourceLayout": {
     "id": "solarium",
-    "name": "高层天井",
+    "name": "Upper Atrium",
     "english": "The Solarium",
-    "district": "高层天井",
+    "district": "Upper Atrium",
     "kind": "exterior",
     "parent": null,
     "level": 2,
-    "description": "玻璃穹顶、收藏建筑与花园步道组成高层天井。栈桥和服务电梯都能前往屋顶。",
+    "description": "Glass dome, collection buildings, and garden paths form Upper Atrium. Skybridge and Service Lift both reach the roof.",
     "characterScale": 1.6,
     "width": 1536,
     "height": 1024,
@@ -364,7 +364,7 @@
     "exits": [
       {
         "id": "enter-lobby",
-        "name": "私人电梯厅",
+        "name": "Private Lift Hall",
         "at": [
           797,
           903
@@ -385,7 +385,7 @@
       },
       {
         "id": "enter-reception",
-        "name": "Celeste 宅接待会厅",
+        "name": "Celeste Residence Reception Hall",
         "at": [
           223,
           342
@@ -406,7 +406,7 @@
       },
       {
         "id": "enter-gallery",
-        "name": "展厅与估值台",
+        "name": "Gallery and Appraisal Desk",
         "at": [
           586,
           343
@@ -427,7 +427,7 @@
       },
       {
         "id": "enter-archive",
-        "name": "档案室",
+        "name": "Archive Room",
         "at": [
           204,
           625
@@ -448,7 +448,7 @@
       },
       {
         "id": "enter-noel",
-        "name": "Noel 的私人厅",
+        "name": "Noel's Private Hall",
         "at": [
           1277,
           338
@@ -469,7 +469,7 @@
       },
       {
         "id": "bridge-tower",
-        "name": "栈桥 → 屋顶花园",
+        "name": "Skybridge → Rooftop Garden",
         "at": [
           901,
           245
@@ -490,7 +490,7 @@
       },
       {
         "id": "service-lift",
-        "name": "服务电梯 → 屋顶花园",
+        "name": "Service Lift → Rooftop Garden",
         "at": [
           1348,
           623
@@ -513,7 +513,7 @@
     "anchors": [
       {
         "id": "S2",
-        "name": "花园环线与观景平台",
+        "name": "Garden loop and viewing platform",
         "at": [
           809,
           636
@@ -522,12 +522,12 @@
         "npcs": [
           "Noel"
         ],
-        "note": "安静会面座椅",
+        "note": "Quiet meeting seats",
         "radius": 70
       },
       {
         "id": "S4",
-        "name": "玻璃栈桥",
+        "name": "Glass skybridge",
         "at": [
           973,
           302
@@ -538,19 +538,19 @@
         "npcs": [
           "Iris"
         ],
-        "note": "未验收透明外桥 vs 服务电梯",
+        "note": "Uninspected transparent outer bridge vs Service Lift",
         "radius": 70
       },
       {
         "id": "S5",
-        "name": "服务电梯",
+        "name": "Service Lift",
         "at": [
           1240,
           649
         ],
         "events": [],
         "npcs": [],
-        "note": "慢速、认证完备",
+        "note": "Slow, fully certified",
         "radius": 70
       }
     ]
