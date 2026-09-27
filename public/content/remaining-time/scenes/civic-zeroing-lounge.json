@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "content_version": "room-world-2-npc-menu",
   "id": "civic-zeroing-lounge",
-  "name": "归零等候区",
+  "name": "Zeroing Lounge",
   "map": {
     "source": "maps/civic-zeroing-lounge.json"
   },
@@ -13,7 +13,7 @@
   "entities": [
     {
       "id": "civic-zeroing-lounge.return",
-      "name": "返回",
+      "name": "Back",
       "position": [44, 17],
       "portalTiles": [
         [44, 17],
@@ -31,7 +31,7 @@
     },
     {
       "id": "volunteer",
-      "name": "陪伴志愿者",
+      "name": "Companion Volunteer",
       "position": [30, 11],
       "character": "sprite",
       "sprite": {
@@ -43,7 +43,7 @@
     },
     {
       "id": "resident-zeroing",
-      "name": "等候住户",
+      "name": "Waiting Resident",
       "position": [18, 11],
       "character": "sprite",
       "sprite": {

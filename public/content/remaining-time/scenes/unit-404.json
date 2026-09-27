@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "content_version": "unit-404-s01-guided-2",
   "id": "unit-404",
-  "name": "404 号舱",
+  "name": "Cabin 404",
   "map": {
     "source": "maps/unit-404.json"
   },
@@ -13,7 +13,7 @@
   "entities": [
     {
       "id": "unit-404.return",
-      "name": "返回",
+      "name": "Back",
       "position": [19, 31],
       "portalTiles": [
         [19, 31],
@@ -34,7 +34,7 @@
     },
     {
       "id": "unit-404.cabinet",
-      "name": "暂存柜",
+      "name": "Storage Locker",
       "position": [19, 11],
       "interactionOffsets": [
         [-3, -1],
@@ -63,7 +63,7 @@
     },
     {
       "id": "unit-404.bed",
-      "name": "床",
+      "name": "Bed",
       "position": [7, 23],
       "interactionOffsets": [
         [1, -3],
@@ -82,7 +82,7 @@
     },
     {
       "id": "unit-404.old-record",
-      "name": "旧住户记录",
+      "name": "Former Resident Records",
       "position": [33, 23],
       "interactionOffsets": [
         [0, -2],

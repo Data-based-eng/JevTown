@@ -47,11 +47,11 @@ export default function NpcAnimationPreview({
       await image.decode();
       for (const frame of Object.values(asset.frames)) {
         if (frame.x + frame.w > image.width || frame.y + frame.h > image.height)
-          throw new Error('动画帧超出图集边界');
+          throw new Error('Animation frame exceeds atlas bounds');
       }
       if (!controller.signal.aborted) setLoaded({ asset, image });
     })().catch((reason) => {
-      if (!controller.signal.aborted) setError(`动画素材加载失败：${reason.message}`);
+      if (!controller.signal.aborted) setError(`Failed to load animation assets: ${reason.message}`);
     });
     return () => controller.abort();
   }, [characterId]);
@@ -102,8 +102,8 @@ export default function NpcAnimationPreview({
       }}
     >
       <header>
-        <h2 id={titleId}>{name} · 动画素材预览</h2>
-        <button onClick={() => panel.current?.close()} aria-label="关闭动画预览">
+        <h2 id={titleId}>{name} · Animation Preview</h2>
+        <button onClick={() => panel.current?.close()} aria-label="Close animation preview">
           ×
         </button>
       </header>
@@ -111,7 +111,7 @@ export default function NpcAnimationPreview({
         ref={canvas}
         width={320}
         height={320}
-        aria-label={`${name}的${loaded?.asset.animations[group].label ?? group}动画`}
+        aria-label={`${name}'s ${loaded?.asset.animations[group].label ?? group} animation`}
         style={{
           display: 'block',
           margin: '16px auto',
@@ -120,10 +120,10 @@ export default function NpcAnimationPreview({
           imageRendering: 'pixelated',
         }}
       />
-      {!loaded && <p role="status">{error || '正在加载动画素材…'}</p>}
+      {!loaded && <p role="status">{error || 'Loading animation assets…'}</p>}
       {loaded && (
         <>
-          <div className="flex flex-wrap gap-2" role="group" aria-label="选择动作">
+          <div className="flex flex-wrap gap-2" role="group" aria-label="Choose action">
             {Object.entries(loaded.asset.animations).map(([id, animation]) => (
               <button
                 key={id}
@@ -136,25 +136,25 @@ export default function NpcAnimationPreview({
                 {animation.label ?? id}
               </button>
             ))}
-            <button disabled title="待补齐上、下、左、右四个朝向的站立素材">
-              四向站立（素材缺失）
+            <button disabled title="Standing sprites for up/down/left/right not yet added">
+              Four-direction stand (assets missing)
             </button>
-            <button disabled title="待补齐上、下、左、右四个朝向的行走动画">
-              移动动画（素材缺失）
+            <button disabled title="Walk animations for up/down/left/right not yet added">
+              Move animation (assets missing)
             </button>
           </div>
           <p className="my-3 text-sm">
-            {loaded.asset.animations[group].frames.length} 帧 · 每帧{' '}
-            {loaded.asset.animations[group].duration} 毫秒
+            {loaded.asset.animations[group].frames.length}  frames · {' '}
+            {loaded.asset.animations[group].duration}  ms
           </p>
           <div className="flex flex-wrap gap-2">
             <button onClick={() => setPlaying((value) => !value)}>
-              {playing ? '暂停' : '播放'}
+              {playing ? 'Pause' : 'Play'}
             </button>
             <button onClick={() => setDark((value) => !value)}>
-              {dark ? '切换浅色背景' : '切换深色背景'}
+              {dark ? 'Switch to light background' : 'Switch to dark background'}
             </button>
-            <button onClick={() => panel.current?.close()}>返回交谈</button>
+            <button onClick={() => panel.current?.close()}>Back to conversation</button>
           </div>
         </>
       )}

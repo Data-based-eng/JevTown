@@ -52,22 +52,22 @@ export default function TaskBoard({
   }, [complete]);
   return (
     <>
-      <section hidden={hidden} className="task-board" aria-label="当前任务">
+      <section hidden={hidden} className="task-board" aria-label="Current task">
         {!dismissed && (
           <div aria-live="polite">
-            <h2>{current?.title ?? '✓ 任务已完成'}</h2>
-            <p>{currentStep?.text ?? '全部任务已完成。'}</p>
+            <h2>{current?.title ?? '✓ Task complete'}</h2>
+            <p>{currentStep?.text ?? 'All tasks complete.'}</p>
             {currentStep?.marker && (
               <div className="task-board__guide">
                 <p>
-                  <strong>背景：</strong>
+                  <strong>Background: </strong>
                   {current?.background}
                 </p>
                 <p>
-                  <strong>现在去：</strong>
+                  <strong>Go now: </strong>
                   {current?.description}
                 </p>
-                <p className="task-board__legend">金色 ! 查看／拿取 · ? 确认／交付 · E 交互</p>
+                <p className="task-board__legend">Gold ! inspect/take · ? confirm/deliver · E interact</p>
               </div>
             )}
           </div>
@@ -75,7 +75,7 @@ export default function TaskBoard({
         <button
           ref={trigger}
           className="task-board__trigger"
-          aria-label="任务面板（T 打开或关闭）"
+          aria-label="Task panel (T to open/close)"
           aria-haspopup="dialog"
           onClick={open}
         >
@@ -93,14 +93,14 @@ export default function TaskBoard({
         }}
       >
         <header>
-          <h2 id="task-panel-title">任务</h2>
-          <button autoFocus onClick={close} aria-label="关闭任务面板" title="关闭任务面板">
+          <h2 id="task-panel-title">Task</h2>
+          <button autoFocus onClick={close} aria-label="Close task panel" title="Close task panel">
             <span aria-hidden="true">×</span>
           </button>
         </header>
         <div className="task-panel__body">
-          <nav aria-label="任务列表">
-            <h3>任务</h3>
+          <nav aria-label="Task list">
+            <h3>Task</h3>
             {tasks.map((task) => (
               <button
                 key={task.id}
@@ -116,18 +116,18 @@ export default function TaskBoard({
               <h3>{selected.title}</h3>
               {selected.background && (
                 <>
-                  <h4 className="mt-4 font-semibold text-amber-200">任务背景</h4>
+                  <h4 className="mt-4 font-semibold text-amber-200">Task Background</h4>
                   <p className="whitespace-pre-wrap">{selected.background}</p>
                 </>
               )}
-              <h4 className="mt-4 font-semibold text-amber-200">任务描述</h4>
+              <h4 className="mt-4 font-semibold text-amber-200">Task Details</h4>
               <p className="whitespace-pre-wrap">{selected.description}</p>
-              <h4 className="mt-4 font-semibold text-amber-200">已知进度</h4>
+              <h4 className="mt-4 font-semibold text-amber-200">Known Progress</h4>
               <ul>
                 {selected.steps.map((step) => (
                   <li key={step.id}>
                     {selected.completed.includes(step.id) ? '✓' : '□'} {step.text}
-                    {`（${selected.progress[step.id]?.count ?? 0}/${step.condition.count}）`}
+                    {` (${selected.progress[step.id]?.count ?? 0}/${step.condition.count})`}
                     {step.condition.items && (
                       <ul>
                         {step.condition.items.map((item) => (
@@ -142,11 +142,11 @@ export default function TaskBoard({
                 ))}
               </ul>
               <p className="task-panel__status">
-                {selected.completed.length === selected.steps.length ? '已完成' : '进行中'}
+                {selected.completed.length === selected.steps.length ? 'Done' : 'Active'}
               </p>
             </article>
           ) : (
-            <p>暂无任务</p>
+            <p>No tasks</p>
           )}
         </div>
       </dialog>

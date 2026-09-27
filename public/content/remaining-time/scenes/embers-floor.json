@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "content_version": "room-world-2-npc-menu",
   "id": "embers-floor",
-  "name": "余烬公开赌桌大厅",
+  "name": "Embers Open Gaming Hall",
   "map": {
     "source": "maps/embers-floor.json"
   },
@@ -16,7 +16,7 @@
   "entities": [
     {
       "id": "embers-floor.return",
-      "name": "返回",
+      "name": "Back",
       "position": [1, 22],
       "portalTiles": [
         [1, 22],
@@ -34,7 +34,7 @@
     },
     {
       "id": "embers-floor.to-backstage",
-      "name": "后台",
+      "name": "Backstage",
       "position": [34, 5],
       "portalTiles": [
         [34, 5],
@@ -52,7 +52,7 @@
     },
     {
       "id": "embers-floor.to-office",
-      "name": "概念密码门 → Rook 的账房",
+      "name": "Concept-Lock Door → Rook's Counting Room",
       "position": [46, 12],
       "portalTiles": [
         [46, 12],
@@ -70,7 +70,7 @@
     },
     {
       "id": "embers-floor.to-lounge",
-      "name": "休息间",
+      "name": "Lounge",
       "position": [1, 12],
       "portalTiles": [
         [1, 12],
@@ -124,7 +124,7 @@
     },
     {
       "id": "gambler",
-      "name": "赌客",
+      "name": "Gambler",
       "position": [34, 14],
       "character": "sprite",
       "sprite": {
@@ -136,7 +136,7 @@
     },
     {
       "id": "cashier",
-      "name": "兑时员",
+      "name": "Time Cashier",
       "position": [21, 25],
       "character": "sprite",
       "sprite": {
@@ -148,7 +148,7 @@
     },
     {
       "id": "gambler-dispute",
-      "name": "争议筹码持有人",
+      "name": "Disputed Chip Holder",
       "position": [10, 20],
       "character": "sprite",
       "sprite": {

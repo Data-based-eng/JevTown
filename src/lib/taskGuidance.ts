@@ -19,7 +19,7 @@ export function taskGuidance(scenes: Scene[], current: Scene, step?: Task['steps
       if (!next) continue;
       const firstExit = exit ?? door;
       if (next.id === targetScene.id)
-        return { entity: firstExit, marker: '!' as const, label: `出口 → ${targetScene.name}` };
+        return { entity: firstExit, marker: '!' as const, label: `Exit → ${targetScene.name}` };
       seen.add(next.id);
       queue.push({ scene: next, exit: firstExit });
     }

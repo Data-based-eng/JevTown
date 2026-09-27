@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "content_version": "room-world-2-npc-menu",
   "id": "low-service-duct",
-  "name": "检修捷径",
+  "name": "Maintenance Shortcut",
   "map": {
     "source": "maps/low-service-duct.json"
   },
@@ -14,7 +14,7 @@
   "entities": [
     {
       "id": "low-service-duct.east",
-      "name": "南侧检修井出口",
+      "name": "South Shaft Exit",
       "position": [43, 11],
       "portalTiles": [
         [43, 11],
@@ -32,7 +32,7 @@
     },
     {
       "id": "low-service-duct.to-cooling",
-      "name": "隐藏房间（冷却柱机房）",
+      "name": "Hidden Room (Cooling Pillar Room)",
       "position": [28, 10],
       "portalTiles": [
         [28, 10],

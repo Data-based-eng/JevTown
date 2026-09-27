@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "content_version": "room-world-1-box-noel-suite",
   "id": "noel-suite",
-  "name": "Noel 的私人厅",
+  "name": "Noel's Private Lounge",
   "map": {
     "source": "maps/noel-suite.json"
   },
@@ -13,7 +13,7 @@
   "entities": [
     {
       "id": "noel-suite.return",
-      "name": "返回",
+      "name": "Back",
       "position": [21, 28],
       "portalTiles": [
         [21, 28],

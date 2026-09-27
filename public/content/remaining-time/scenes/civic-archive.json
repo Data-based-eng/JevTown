@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "content_version": "room-world-1-box-civic-archive",
   "id": "civic-archive",
-  "name": "封存区",
+  "name": "Sealed Archives",
   "map": {
     "source": "maps/civic-archive.json"
   },
@@ -13,7 +13,7 @@
   "entities": [
     {
       "id": "civic-archive.return",
-      "name": "返回",
+      "name": "Back",
       "position": [22, 29],
       "portalTiles": [
         [22, 29],

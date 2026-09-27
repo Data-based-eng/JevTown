@@ -27,7 +27,7 @@ export default function DebugConsole({
     <div
       className="pointer-events-auto fixed inset-x-0 top-0 z-[100] border-b border-amber-300/60 bg-black/95 p-3 font-sans text-amber-100 shadow-2xl"
       role="dialog"
-      aria-label="开发控制台"
+      aria-label="Dev Console"
       onKeyDown={(event) => {
         if (event.key === 'Escape') onClose();
       }}
@@ -46,20 +46,20 @@ export default function DebugConsole({
           &gt;
         </span>
         <label className="min-w-0 flex-1">
-          <span className="sr-only">控制台命令</span>
+          <span className="sr-only">Console command</span>
           <input
             ref={input}
             autoFocus
             className="block w-full border-0 bg-transparent p-1 font-mono text-lg text-amber-100 outline-none"
-            placeholder="输入 help 查看可用命令"
+            placeholder="Type help for available commands"
             value={command}
             onChange={(event) => setCommand(event.target.value)}
-            aria-label="控制台命令"
+            aria-label="Console command"
             disabled={disabled}
           />
         </label>
         <span className="hidden whitespace-pre-line text-xs opacity-70 sm:inline">
-          {sceneId} · 回车执行 · Esc 关闭
+          {sceneId} · Enter runs · Esc closes
         </span>
       </form>
       {feedback && (

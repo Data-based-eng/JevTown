@@ -40,7 +40,7 @@ import TownViewport from './TownViewport';
  * ## What it is checking
  *
  * That the upstream loop still closes on unfamiliar ground: decide -> walk -> invite -> accept ->
- * converse -> remember, on `dev`'s 高层天井 instead of `data/gentle.js`. The god is off (the world
+ * converse -> remember, on `dev`'s Upper Atrium instead of `data/gentle.js`. The god is off (the world
  * file declares no persona), storage is off (no `VITE_SYNC_WORLD_ID`), and nothing is persisted:
  * a reload is a new world, which is the point of a one-shot check.
  */

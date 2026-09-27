@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "content_version": "room-world-2-npc-menu",
   "id": "garden-vault",
-  "name": "花园维护层密室",
+  "name": "Garden Maintenance Vault",
   "map": {
     "source": "maps/garden-vault.json"
   },
@@ -13,7 +13,7 @@
   "entities": [
     {
       "id": "garden-vault.return",
-      "name": "返回",
+      "name": "Back",
       "position": [24, 27],
       "portalTiles": [
         [24, 27],

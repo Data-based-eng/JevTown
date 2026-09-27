@@ -23,12 +23,12 @@ export default function RelicCollection({
   const selected = slots[selectedSlot - 1];
   return (
     <div className="relic-collection">
-      <section className="relic-grid" aria-label="遗物固定格位">
+      <section className="relic-grid" aria-label="Relic slots">
         {slots.map(({ slot, item, clues }) => (
           <button
             key={slot}
             aria-pressed={slot === selectedSlot}
-            aria-label={`${item?.name ?? '未知遗物'}，格位 ${slot}，线索 ${clues.length} 条`}
+            aria-label={`${item?.name ?? 'Unknown Relic'}, slot  ${slot}，Clue ${clues.length}  clues`}
             onClick={() => setSelectedSlot(slot)}
           >
             <small className="relic-slot-number">{String(slot).padStart(2, '0')}</small>
@@ -39,12 +39,12 @@ export default function RelicCollection({
                 ?
               </span>
             )}
-            {clues.length > 0 && <small className="relic-clue-count">线索 {clues.length}</small>}
+            {clues.length > 0 && <small className="relic-clue-count">Clue {clues.length}</small>}
           </button>
         ))}
       </section>
-      <section className="relic-detail" aria-label="遗物与线索详情">
-        <small>收藏 · {String(selectedSlot).padStart(2, '0')}</small>
+      <section className="relic-detail" aria-label="Relic and clue details">
+        <small>Collection · {String(selectedSlot).padStart(2, '0')}</small>
         {selected.item ? (
           <>
             <img
@@ -58,8 +58,8 @@ export default function RelicCollection({
             </p>
             <p>{selected.item.description}</p>
             <section className="relic-effect">
-              <h4>特殊效果</h4>
-              <p>{selected.item.effectDescription || '暂无效果说明。'}</p>
+              <h4>Special Effect</h4>
+              <p>{selected.item.effectDescription || 'No effect description yet.'}</p>
             </section>
           </>
         ) : (
@@ -67,23 +67,23 @@ export default function RelicCollection({
             <div className="relic-portrait relic-unknown" aria-hidden="true">
               ?
             </div>
-            <h3>未知遗物</h3>
-            <p>获得后揭示遗物的样貌、故事与特殊效果。</p>
+            <h3>Unknown Relic</h3>
+            <p>Its appearance, story, and special effect are revealed once obtained.</p>
           </>
         )}
-        <section className="relic-clues" aria-label="已获得线索">
-          <h4>线索 · {selected.clues.length}</h4>
+        <section className="relic-clues" aria-label="Clues obtained">
+          <h4>Clue · {selected.clues.length}</h4>
           {selected.clues.length ? (
             <ol>
               {selected.clues.map((clue) => (
                 <li key={clue.id}>
                   <p>{clue.text}</p>
-                  <small>来源：{clue.source}</small>
+                  <small>Source: {clue.source}</small>
                 </li>
               ))}
             </ol>
           ) : (
-            <p>暂无线索。与居民交谈、探索物件时，可以把发现记录在这里。</p>
+            <p>No clues yet. Talk to residents and examine objects to record discoveries here.</p>
           )}
         </section>
       </section>

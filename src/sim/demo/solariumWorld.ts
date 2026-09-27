@@ -8,7 +8,7 @@ import { scaleCast } from './scaleCast';
 import worldFileJson from './solarium.world.json';
 
 /**
- * Five agents on `dev`'s 高层天井, as a check that the flow runs.
+ * Five agents on `dev`'s Upper Atrium, as a check that the flow runs.
  *
  * The question this answers is narrow and worth stating: **does the upstream agent loop still
  * work end to end when the ground under it is a `dev` scene rather than `data/gentle.js`?** Walk,

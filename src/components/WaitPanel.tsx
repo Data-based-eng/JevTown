@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { formatTime } from '../../prototype/world';
 const clockLabel = (seconds: number) =>
-  `第 ${Math.floor(seconds / 86400) + 1} 天 ${formatTime(Math.floor(seconds) % 86400)
+  `Day ${Math.floor(seconds / 86400) + 1} ${formatTime(Math.floor(seconds) % 86400)
     .padStart(8, '0')
     .slice(0, 5)}`;
 export default function WaitPanel({
@@ -50,8 +50,8 @@ export default function WaitPanel({
       onClose={onClose}
     >
       <header>
-        <h2 id="wait-title">{sleeping ? '睡眠' : '等待'}</h2>
-        <button onClick={() => panel.current?.close()} aria-label="关闭休息窗口">
+        <h2 id="wait-title">{sleeping ? 'Sleep' : 'Wait'}</h2>
+        <button onClick={() => panel.current?.close()} aria-label="Close rest window">
           ×
         </button>
       </header>
@@ -62,12 +62,12 @@ export default function WaitPanel({
           if (valid && onWait(until, hours)) panel.current?.close();
         }}
       >
-        <p className="text-center">现在 · {clockLabel(earliestTime)}</p>
+        <p className="text-center">Now · {clockLabel(earliestTime)}</p>
         {fixedTime === undefined ? (
           <label className="block py-3 text-center">
-            <span className="block text-sm">{sleeping ? '睡多久' : '等待多久'}</span>
+            <span className="block text-sm">{sleeping ? 'How long to sleep' : 'How long to wait'}</span>
             <output className="my-4 block text-4xl font-semibold text-amber-200" aria-live="polite">
-              {hours} <span className="text-lg">小时</span>
+              {hours} <span className="text-lg">h</span>
             </output>
             <input
               autoFocus
@@ -77,32 +77,32 @@ export default function WaitPanel({
               max="24"
               step="1"
               value={hours}
-              aria-label={sleeping ? '睡眠时长' : '等待时长'}
-              aria-valuetext={`${hours} 小时`}
+              aria-label={sleeping ? 'Sleep duration' : 'Wait duration'}
+              aria-valuetext={`${hours} h`}
               onChange={(event) => setHours(Number(event.target.value))}
             />
             <span className="mt-2 flex justify-between text-sm" aria-hidden="true">
-              <span>1 小时</span>
-              <span>24 小时</span>
+              <span>1 hour</span>
+              <span>24 hours</span>
             </span>
           </label>
         ) : (
-          <p className="text-center">本次睡眠时长 · {formatTime(seconds)}</p>
+          <p className="text-center">This sleep · {formatTime(seconds)}</p>
         )}
         <p className="text-center">
-          {sleeping ? '醒来' : '结束'} · {clockLabel(until)}
+          {sleeping ? 'Wake up' : 'End'} · {clockLabel(until)}
         </p>
         <p aria-live="polite">
-          消耗余时 {formatTime(seconds)} ·{' '}
-          {valid ? `剩余 ${formatTime(balance - seconds)}` : '余时不足，无法确认。'}
+          Costs  {formatTime(seconds)} ·{' '}
+          {valid ? `Remaining  ${formatTime(balance - seconds)}` : 'Not enough remaining time.'}
         </p>
         <p className="text-sm">
-          消耗包含当前已积累、尚未结算的时间。期间世界继续运转，人物按各自作息活动。
-          {sleeping ? '这间临时客房免收房费。' : ''}
+          Covers time accrued but not yet settled. The world keeps running; people follow their routines.
+          {sleeping ? 'This temporary room is free of charge.' : ''}
         </p>
         {feedback && <p role="status">{feedback}</p>}
         <button type="submit" disabled={!valid}>
-          {sleeping ? '确认入睡' : '确认等待'}
+          {sleeping ? 'Confirm Sleep' : 'Confirm Wait'}
         </button>
       </form>
     </dialog>

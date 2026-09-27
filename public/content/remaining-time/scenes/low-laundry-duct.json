@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "content_version": "room-world-2-npc-menu",
   "id": "low-laundry-duct",
-  "name": "旧洗衣管道",
+  "name": "Old Laundry Duct",
   "map": {
     "source": "maps/low-laundry-duct.json"
   },
@@ -14,7 +14,7 @@
   "entities": [
     {
       "id": "low-laundry-duct.west",
-      "name": "舱房层端",
+      "name": "Cabin Level End",
       "position": [4, 11],
       "portalTiles": [
         [4, 11],
@@ -32,7 +32,7 @@
     },
     {
       "id": "low-laundry-duct.east",
-      "name": "广场端",
+      "name": "Plaza End",
       "position": [42, 11],
       "portalTiles": [
         [42, 11],

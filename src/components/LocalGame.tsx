@@ -107,7 +107,7 @@ export default function LocalGame({ controlsBlocked }: { controlsBlocked: boolea
       });
     return () => controller.abort();
   }, []);
-  if (!content || !saved) return <p role="status">{error || '正在加载场景与自动存档…'}</p>;
+  if (!content || !saved) return <p role="status">{error || 'Loading scene and auto-save…'}</p>;
   return (
     <LoadedLocalGame
       key={generation}
@@ -207,7 +207,7 @@ function LoadedLocalGame({
             name:
               task.title +
               (current
-                ? ` · ${current.text}${current.condition.count > 1 ? `（${next.steps[current.id]?.count ?? 0}/${current.condition.count}）` : ''}`
+                ? ` · ${current.text}${current.condition.count > 1 ? ` (${next.steps[current.id]?.count ?? 0}/${current.condition.count})` : ''}`
                 : ''),
           });
         }
@@ -220,14 +220,14 @@ function LoadedLocalGame({
         const newClues = (event.state.clues ?? []).filter(
           (id) => !before.clues?.includes(id),
         ).length;
-        if (newClues) receipts.push({ name: '遗物线索', amount: String(newClues) });
+        if (newClues) receipts.push({ name: 'Relic Clue', amount: String(newClues) });
         const income =
           event.state.balance -
           before.balance +
           (event.cause.type === 'advance' && content.story.clock
             ? event.state.storyTime - before.storyTime
             : 0);
-        if (income > 0) receipts.push({ name: '余时', amount: formatTime(income) });
+        if (income > 0) receipts.push({ name: 'Time', amount: formatTime(income) });
       }
       gainCursor.current = { sequence: event.sequence, state: event.state };
     }
@@ -354,7 +354,7 @@ function LoadedLocalGame({
     const result = world.execute({ requestId: crypto.randomUUID(), ...command });
     if (world.inspect().sceneId !== previousScene) keys.current.clear();
     publish();
-    setFeedback(result.ok ? '操作完成' : result.error);
+    setFeedback(result.ok ? 'Action Complete' : result.error);
     return result.ok;
   };
   const openInventory = (mode: 'bag' | 'relics') => {
@@ -786,38 +786,38 @@ function LoadedLocalGame({
     <GameFrame
       backgroundColor={currentScene.map.art?.length ? 0x000000 : undefined}
       shortcuts={
-        <nav className="inventory-shortcuts" aria-label="物品快捷栏">
+        <nav className="inventory-shortcuts" aria-label="Item shortcuts">
           <button
-            aria-label="背包"
+            aria-label="Backpack"
             aria-keyshortcuts="1"
-            title="背包 · 1"
+            title="Backpack · 1"
             disabled={controlsBlocked || tasksOpen || saves.blocked}
             onClick={() => openInventory('bag')}
           >
             <svg viewBox="0 0 48 48" aria-hidden="true">
               <path d="M17 12V8h14v4M10 15h28v27H10zM10 25h28M17 20v11M31 20v11" />
             </svg>
-            <span>背包</span>
+            <span>Backpack</span>
             <kbd>1</kbd>
           </button>
           <button
-            aria-label="遗物收藏"
+            aria-label="Relic Collection"
             aria-keyshortcuts="2"
-            title="遗物收藏 · 2"
+            title="Relic Collection · 2"
             disabled={controlsBlocked || tasksOpen || saves.blocked}
             onClick={() => openInventory('relics')}
           >
             <svg viewBox="0 0 48 48" aria-hidden="true">
               <path d="M9 6h30v36H9zM24 13l4 8 8 1-6 6 1 9-7-4-7 4 1-9-6-6 8-1z" />
             </svg>
-            <span>遗物</span>
+            <span>Relic</span>
             <kbd>2</kbd>
           </button>
           {content.story.clock && (
             <button
-              aria-label="等待"
+              aria-label="Wait"
               aria-keyshortcuts="R"
-              title="等待 · R"
+              title="Wait · R"
               disabled={
                 watching ||
                 controlsBlocked ||
@@ -833,7 +833,7 @@ function LoadedLocalGame({
                 <circle cx="24" cy="24" r="18" />
                 <path d="M24 12v13l9 5" />
               </svg>
-              <span>等待</span>
+              <span>Wait</span>
               <kbd>R</kbd>
             </button>
           )}
@@ -850,12 +850,12 @@ function LoadedLocalGame({
               disabled={watching || controlsBlocked || saves.blocked || capacityReached}
               onClick={openDebugConsole}
             >
-              开发控制台 · ~
+              Dev Console · ~
             </button>
           )}
           {capacityReached && (
             <p role="alert" className="px-3 py-2 text-sm">
-              录制已暂停，正在等待保存。
+              Recording paused, waiting to save.
             </p>
           )}
         </>
@@ -864,7 +864,7 @@ function LoadedLocalGame({
         watching &&
         replay &&
         session && (
-          <section aria-label="事件回放">
+          <section aria-label="Event replay">
             <div className="flex flex-wrap items-center gap-2">
               <button
                 disabled={saves.loading || controlsBlocked || session.id <= 1}
@@ -873,9 +873,9 @@ function LoadedLocalGame({
                   void saves.play(session.id - 1, session.head, playing, speed);
                 }}
               >
-                ⏮ 上一档
+                ⏮ Prev save
               </button>
-              <span>存档 {session.id}</span>
+              <span>Save {session.id}</span>
               <button
                 disabled={saves.loading || controlsBlocked || session.id >= session.slots.length}
                 onClick={() => {
@@ -883,13 +883,13 @@ function LoadedLocalGame({
                   void saves.play(session.id + 1, session.head, playing, speed);
                 }}
               >
-                下一档 ⏭
+                Next save ⏭
               </button>
               <input
                 type="range"
                 className="min-w-20 flex-1 cursor-pointer accent-amber-400"
-                aria-label="回放事件进度"
-                aria-valuetext={`事件 ${cursor}，本档 ${cursor - replay.start} / ${replay.total - replay.start}`}
+                aria-label="Replay event progress"
+                aria-valuetext={`Event ${cursor}, this save ${cursor - replay.start} / ${replay.total - replay.start}`}
                 min={replay.start}
                 max={replay.total}
                 step={1}
@@ -931,7 +931,7 @@ function LoadedLocalGame({
                   } else setPlaying(!playing);
                 }}
               >
-                {cursor >= replay.total ? '重播本档' : playing ? '暂停' : '播放'}
+                {cursor >= replay.total ? 'Replay this save' : playing ? 'Pause' : 'Play'}
               </button>
               {[1, 2, 4, 8].map((n) => (
                 <button
@@ -953,7 +953,7 @@ function LoadedLocalGame({
                 }
                 onClick={stepReplay}
               >
-                下一事件
+                Next event
               </button>
               <button
                 disabled={playing || saves.blocked || controlsBlocked || playbackFailed}
@@ -963,7 +963,7 @@ function LoadedLocalGame({
                   void saves.resume(session);
                 }}
               >
-                从此处继续游戏
+                Resume game from here
               </button>
               <button
                 disabled={saves.loading}
@@ -972,12 +972,12 @@ function LoadedLocalGame({
                   onExit();
                 }}
               >
-                退出回放
+                Exit replay
               </button>
             </div>
             <p className="text-xs">
               1×
-              按记录中的模拟时长播放，播完自动接下一档。继续游戏会清除当前位置之后的记录；退出回放则返回观看前的游戏。
+              Plays at recorded sim speed, then auto-advances. Resuming clears everything after this point; exiting returns to the pre-replay game.
             </p>
           </section>
         )
@@ -992,11 +992,11 @@ function LoadedLocalGame({
               sceneId={state.sceneId}
               onClose={() => setConsoleOpen(false)}
               onCommand={(command) => {
-                // TODO: 等 agentic 合入、record 方案确定后，再考虑 tp 等修改世界状态的命令。
+                // TODO: Revisit tp and other world-mutating commands once agentic lands and the record plan is set.
                 setFeedback(
                   command.trim().toLowerCase() === 'help'
-                    ? '可用命令：\n  help'
-                    : '未知命令，输入 help 查看可用命令',
+                    ? 'Available commands:\n  help'
+                    : 'Unknown command; type help for available commands',
                 );
                 return false;
               }}
@@ -1007,8 +1007,8 @@ function LoadedLocalGame({
               role="status"
               className="absolute left-1/2 top-1/2 z-50 -translate-x-1/2 -translate-y-1/2 rounded-lg border border-brown-500 bg-brown-900 p-5 text-center"
             >
-              <h2>无操作，已暂停</h2>
-              <p>世界、时间结算与录制均已暂停。任意键鼠操作继续。</p>
+              <h2>Idle — paused</h2>
+              <p>World, time settlement, and recording are paused. Any input resumes.</p>
               <button
                 onClick={() => {
                   lastActivity.current = performance.now();
@@ -1016,7 +1016,7 @@ function LoadedLocalGame({
                   setIdlePaused(false);
                 }}
               >
-                继续
+                Resume
               </button>
             </section>
           )}
@@ -1117,11 +1117,11 @@ function LoadedLocalGame({
               npcPreviewOpen ||
               !!sleep
             }
-            feedback={feedback && feedback !== '操作完成' ? feedback : undefined}
+            feedback={feedback && feedback !== 'Action Complete' ? feedback : undefined}
           >
             {activeNpcId && !state.dialogueTopic && (
               <>
-                <button disabled>闲聊（LLM 待接入）</button>
+                <button disabled>Chat (LLM not connected yet)</button>
                 <button
                   onClick={() => {
                     if (!flushTime()) return;
@@ -1131,7 +1131,7 @@ function LoadedLocalGame({
                     setNpcPreviewOpen(true);
                   }}
                 >
-                  NPC 动画素材预览
+                  NPC Animation Preview
                 </button>
               </>
             )}
@@ -1142,7 +1142,7 @@ function LoadedLocalGame({
                   setGoodsMode('buy');
                 }}
               >
-                看看商品
+                Browse goods
               </button>
             )}
             {world.choices().map((choice) => (
@@ -1174,9 +1174,9 @@ function LoadedLocalGame({
                 {choice.text}
               </button>
             ))}
-            {active.portal && !world.choices().length && <p>当前尚未满足通行条件。</p>}
+            {active.portal && !world.choices().length && <p>Travel conditions not yet met.</p>}
             <button onClick={() => send({ type: 'closeDialogue' })}>
-              离开 <span aria-hidden="true">· Esc</span>
+              Leave <span aria-hidden="true">· Esc</span>
             </button>
           </DialogueBubble>
         )
@@ -1275,7 +1275,7 @@ function LoadedLocalGame({
                       }}
                     />
                     <Text
-                      text="↓ 门"
+                      text="↓ Door"
                       x={-3}
                       y={-35}
                       style={
@@ -1418,32 +1418,32 @@ function LoadedLocalGame({
         <div className="space-y-4 [&_button]:border [&_button]:border-brown-500 [&_button]:p-2">
           <h2>{currentScene.name}</h2>
           {state.seated && (
-            <section aria-label="坐姿状态">
-              <p>已坐在{seat?.name}</p>
+            <section aria-label="Seated state">
+              <p>Seated at {seat?.name}</p>
               <button
                 disabled={watching || controlsBlocked}
                 onClick={() => send({ type: 'stand' })}
               >
-                起身 · E
+                Stand up · E
               </button>
             </section>
           )}
           {!state.seated && nearby.length > 0 && (
             <>
-              <p>邻近：{nearby.map((e) => e.name).join('、')}</p>
+              <p>Nearby: {nearby.map((e) => e.name).join('、')}</p>
               <button
                 disabled={world.seatUnavailable(nearby[0]?.id ?? '')}
                 onClick={() => send({ type: 'interact', target: nearby[0]?.id ?? '' })}
               >
                 {nearby[0]?.seat
                   ? world.seatUnavailable(nearby[0].id)
-                    ? '此桌已有客人'
-                    : '坐下 · E'
-                  : '交互 · E'}
+                    ? 'This table is occupied'
+                    : 'Sit · E'
+                  : 'Interact · E'}
               </button>
             </>
           )}
-          <p role="status">{saves.error || (paused ? '后台已暂停模拟' : feedback)}</p>
+          <p role="status">{saves.error || (paused ? 'Backstagepausedsim' : feedback)}</p>
         </div>
       }
     />

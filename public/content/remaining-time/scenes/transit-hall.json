@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "content_version": "room-world-2-npc-menu",
   "id": "transit-hall",
-  "name": "转运厅",
+  "name": "Transit Hall",
   "map": {
     "source": "maps/transit-hall.json"
   },
@@ -16,7 +16,7 @@
   "entities": [
     {
       "id": "transit-hall.to-solarium",
-      "name": "私人电梯 → 高层天井",
+      "name": "Private Elevator → Upper Atrium",
       "position": [24, 7],
       "portalTiles": [
         [24, 7],
@@ -34,7 +34,7 @@
     },
     {
       "id": "transit-hall.to-low",
-      "name": "货运梯 → 下层回廊",
+      "name": "Freight Lift → Lower Corridor",
       "position": [23, 29],
       "portalTiles": [
         [23, 29],
@@ -52,7 +52,7 @@
     },
     {
       "id": "transit-hall.to-civic",
-      "name": "计时所",
+      "name": "Timekeeping Office",
       "position": [2, 16],
       "portalTiles": [
         [2, 16],
@@ -70,7 +70,7 @@
     },
     {
       "id": "transit-hall.to-embers",
-      "name": "余烬",
+      "name": "Embers",
       "position": [45, 16],
       "portalTiles": [
         [45, 16],

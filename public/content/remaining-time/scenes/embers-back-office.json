@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "content_version": "room-world-2-npc-menu",
   "id": "embers-back-office",
-  "name": "Rook 的账房",
+  "name": "Rook's Counting Room",
   "map": {
     "source": "maps/embers-back-office.json"
   },
@@ -13,7 +13,7 @@
   "entities": [
     {
       "id": "embers-back-office.return",
-      "name": "返回",
+      "name": "Back",
       "position": [1, 15],
       "portalTiles": [
         [1, 15],

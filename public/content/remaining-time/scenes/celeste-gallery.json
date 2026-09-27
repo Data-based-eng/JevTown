@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "content_version": "room-world-1-box-celeste-gallery",
   "id": "celeste-gallery",
-  "name": "展厅与估值台",
+  "name": "Gallery & Appraisal Desk",
   "map": {
     "source": "maps/celeste-gallery.json"
   },
@@ -13,7 +13,7 @@
   "entities": [
     {
       "id": "celeste-gallery.return",
-      "name": "返回",
+      "name": "Back",
       "position": [21, 29],
       "portalTiles": [
         [21, 29],
@@ -34,7 +34,7 @@
     },
     {
       "id": "appraiser",
-      "name": "估值员",
+      "name": "Appraiser",
       "position": [23, 9],
       "character": "sprite",
       "sprite": {

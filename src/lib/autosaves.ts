@@ -47,7 +47,7 @@ const writeRecording = (dir: FileSystemDirectoryHandle, name: string, run: Recor
   writeJson(dir, name, encodeRecording(run));
 function match(actual: SaveHead, expected: SaveHead) {
   if (actual.revision !== expected.revision)
-    throw new Error('存档已被另一页面更新，请重新打开存档列表并加载。');
+    throw new Error('Saves were updated by another tab; reopen the save list and load.');
 }
 function taskSummary(run: Recording) {
   const active: string[] = [],
@@ -68,7 +68,7 @@ function slotFor(run: Recording, id: number, start: number): SaveSlot {
     run.events.length !== run.eventCount ||
     run.events.at(-1)?.sequence !== start + run.eventCount
   )
-    throw new Error('存档记录不连续');
+    throw new Error('Save records are not continuous');
   return {
     id,
     file: `${crypto.randomUUID()}.json`,
@@ -92,10 +92,10 @@ function withSnapshot(
   const requests = new Map(previous),
     start = run.startSequence ?? 0;
   for (const [i, event] of run.events.entries()) {
-    if (event.sequence !== start + i + 1) throw new Error('存档记录不连续');
+    if (event.sequence !== start + i + 1) throw new Error('Save records are not continuous');
     if (event.cause.type === 'advance') continue;
     const command = parseCommand(event.cause);
-    if (requests.has(command.requestId)) throw new Error('存档包含重复请求');
+    if (requests.has(command.requestId)) throw new Error('Save contains duplicate requests');
     requests.set(command.requestId, {
       fingerprint: JSON.stringify(command),
       result: event.result,
@@ -117,7 +117,7 @@ function withSnapshot(
 }
 function validate(data: Catalogue) {
   if (!data?.head || typeof data.head.revision !== 'string' || !Array.isArray(data.slots))
-    throw new Error('存档目录损坏');
+    throw new Error('Save index corrupted');
   let end = 0;
   for (const [i, slot] of data.slots.entries()) {
     if (
@@ -127,11 +127,11 @@ function validate(data: Catalogue) {
       slot.end <= end ||
       !/^[a-f0-9-]+\.json$/.test(slot.file)
     )
-      throw new Error('存档目录不连续');
+      throw new Error('Save index is not continuous');
     end = slot.end;
   }
   if (data.head.slot !== data.slots.length || data.head.sequence !== end)
-    throw new Error('存档目录位置不一致');
+    throw new Error('Save index position mismatch');
   return data;
 }
 async function readCatalogue(dir: FileSystemDirectoryHandle): Promise<Catalogue> {
@@ -174,7 +174,7 @@ const readChunk = (id: number, expected: SaveHead) =>
   access(async (dir, data) => {
     match(data.head, expected);
     const slot = data.slots.find((s) => s.id === id);
-    if (!slot) throw new Error(`存档 ${id} 的记录缺失`);
+    if (!slot) throw new Error(`Save ${id}  records are missing`);
     return decodeRecording(await readJson(dir, slot.file));
   });
 const checkPredecessor = (id: number, expected: SaveHead, run: Recording) =>
@@ -217,7 +217,7 @@ async function readSnapshot(
 ) {
   const before = await catalogue();
   match(before.head, expected);
-  if (!Number.isInteger(id) || id < 1 || id > before.head.slot) throw new Error('存档槽位不存在');
+  if (!Number.isInteger(id) || id < 1 || id > before.head.slot) throw new Error('Save slot does not exist');
   let run = await readChunk(id, expected);
   const upgrade = !run.snapshot;
   const checkPosition = (chunk: Recording, slot: number) => {
@@ -226,7 +226,7 @@ async function readSnapshot(
       metadata.start !== (chunk.startSequence ?? 0) ||
       metadata.end !== metadata.start + chunk.eventCount
     )
-      throw new Error('存档索引与记录不一致');
+      throw new Error('Save index and records disagree');
   };
   checkPosition(run, id);
   await checkPredecessor(id, expected, run);
@@ -240,11 +240,11 @@ async function readSnapshot(
       if (previous) checkRecordingLink(previous, upgraded);
       requests = upgraded.snapshot!.requests;
       previous = upgraded;
-      progress(`正在补齐旧存档信息 ${slot}/${id}`);
+      progress(`Backfilling old save info  ${slot}/${id}`);
     }
     run = previous!;
   }
-  progress('正在恢复存档快照');
+  progress('Restoring save snapshot');
   const world = restoreSnapshot(run);
   if (upgrade)
     await access(async (dir, data) => {
@@ -265,7 +265,7 @@ export async function restoreSlot(
   const next = await access(async (dir, data) => {
     match(data.head, expected);
     if (data.slots[id - 1]?.end !== world.recordingStats().end)
-      throw new Error('存档索引与恢复位置不一致');
+      throw new Error('Save index and restore position disagree');
     return publish(dir, data, data.slots.slice(0, id));
   });
   return { world, head: next };
@@ -284,13 +284,13 @@ export async function playSlot(
   const before = await catalogue();
   match(before.head, expected);
   if (!Number.isInteger(id) || id < 1 || id > before.slots.length)
-    throw new Error('存档槽位不存在');
+    throw new Error('Save slot does not exist');
   const run = await readChunk(id, expected),
     slot = before.slots[id - 1];
   const origin =
     id > 1 && !run.initialState ? (await readSnapshot(id - 1, expected, progress)).run : undefined;
   if (slot.start !== (run.startSequence ?? 0) || slot.end !== slot.start + run.eventCount)
-    throw new Error('存档索引与记录不一致');
+    throw new Error('Save index and records disagree');
   await checkPredecessor(id, expected, run);
   const replay = createReplay(run, origin);
   return { id, head: before.head, slots: before.slots, replay };
@@ -309,7 +309,7 @@ export async function continuePlayback(playback: SavePlayback) {
       replay.index < slot.start ||
       replay.index > slot.end
     )
-      throw new Error('回放位置与存档不一致');
+      throw new Error('Replay position and save disagree');
     return publish(dir, data, data.slots.slice(0, replay.index === slot.end ? id : id - 1));
   });
   const world = replay.continueGame();

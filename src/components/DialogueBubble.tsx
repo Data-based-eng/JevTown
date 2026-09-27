@@ -92,7 +92,7 @@ export default function DialogueBubble({
     <section
       ref={dialogueRef}
       role="dialog"
-      aria-label="当前交互"
+      aria-label="Current interaction"
       aria-labelledby={nameId}
       tabIndex={-1}
       onKeyDown={(event) => {
@@ -160,10 +160,10 @@ export default function DialogueBubble({
               }
         }
       >
-        <h3>选择</h3>
-        <p className="dialogue-keyboard-hint">W / S ↑↓ 选择 · E 确认 · Esc 离开</p>
+        <h3>Choose</h3>
+        <p className="dialogue-keyboard-hint">W/S ↑↓ choose · E confirm · Esc leave</p>
         <div className="dialogue-options-scroll">
-          <fieldset disabled={disabled} aria-label="对话选项">
+          <fieldset disabled={disabled} aria-label="Dialogue options">
             {children}
           </fieldset>
         </div>

@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "content_version": "room-world-2-npc-menu",
   "id": "civic-mediation",
-  "name": "争议调解室",
+  "name": "Dispute Mediation Room",
   "map": {
     "source": "maps/civic-mediation.json"
   },
@@ -13,7 +13,7 @@
   "entities": [
     {
       "id": "civic-mediation.return",
-      "name": "返回",
+      "name": "Back",
       "position": [46, 16],
       "portalTiles": [
         [46, 16],

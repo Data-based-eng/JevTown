@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "content_version": "room-world-1-box-celeste-archive",
   "id": "celeste-archive",
-  "name": "档案室 / 收藏库",
+  "name": "Archives / Collection Vault",
   "map": {
     "source": "maps/celeste-archive.json"
   },
@@ -13,7 +13,7 @@
   "entities": [
     {
       "id": "celeste-archive.return",
-      "name": "返回",
+      "name": "Back",
       "position": [21, 29],
       "portalTiles": [
         [21, 29],

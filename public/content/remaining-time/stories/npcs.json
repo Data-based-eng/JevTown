@@ -5,123 +5,123 @@
   "vars": {},
   "interactions": {
     "milo": {
-      "text": "请选择一项操作。",
+      "text": "Please choose an action.",
       "choices": []
     },
     "mara": {
-      "text": "请选择一项操作。",
+      "text": "Please choose an action.",
       "choices": []
     },
     "bio-swift": {
-      "text": "请选择一项操作。",
+      "text": "Please choose an action.",
       "choices": []
     },
     "resident-door": {
-      "text": "请选择一项操作。",
+      "text": "Please choose an action.",
       "choices": []
     },
     "rowan": {
-      "text": "请选择一项操作。",
+      "text": "Please choose an action.",
       "choices": []
     },
     "resident": {
-      "text": "请选择一项操作。",
+      "text": "Please choose an action.",
       "choices": []
     },
     "nurse": {
-      "text": "请选择一项操作。",
+      "text": "Please choose an action.",
       "choices": []
     },
     "rhea": {
-      "text": "请选择一项操作。",
+      "text": "Please choose an action.",
       "choices": []
     },
     "silas": {
-      "text": "请选择一项操作。",
+      "text": "Please choose an action.",
       "choices": []
     },
     "adrian": {
-      "text": "请选择一项操作。",
+      "text": "Please choose an action.",
       "choices": []
     },
     "meridian": {
-      "text": "请选择一项操作。",
+      "text": "Please choose an action.",
       "choices": []
     },
     "elder": {
-      "text": "请选择一项操作。",
+      "text": "Please choose an action.",
       "choices": []
     },
     "clerk": {
-      "text": "请选择一项操作。",
+      "text": "Please choose an action.",
       "choices": []
     },
     "guard": {
-      "text": "请选择一项操作。",
+      "text": "Please choose an action.",
       "choices": []
     },
     "resident-queue": {
-      "text": "请选择一项操作。",
+      "text": "Please choose an action.",
       "choices": []
     },
     "volunteer": {
-      "text": "请选择一项操作。",
+      "text": "Please choose an action.",
       "choices": []
     },
     "resident-zeroing": {
-      "text": "请选择一项操作。",
+      "text": "Please choose an action.",
       "choices": []
     },
     "receptionist": {
-      "text": "请选择一项操作。",
+      "text": "Please choose an action.",
       "choices": []
     },
     "celeste": {
-      "text": "请选择一项操作。",
+      "text": "Please choose an action.",
       "choices": []
     },
     "waiter": {
-      "text": "请选择一项操作。",
+      "text": "Please choose an action.",
       "choices": []
     },
     "collector": {
-      "text": "请选择一项操作。",
+      "text": "Please choose an action.",
       "choices": []
     },
     "appraiser": {
-      "text": "请选择一项操作。",
+      "text": "Please choose an action.",
       "choices": []
     },
     "noel": {
-      "text": "请选择一项操作。",
+      "text": "Please choose an action.",
       "choices": []
     },
     "iris": {
-      "text": "请选择一项操作。",
+      "text": "Please choose an action.",
       "choices": []
     },
     "rook": {
-      "text": "请选择一项操作。",
+      "text": "Please choose an action.",
       "choices": []
     },
     "lyra": {
-      "text": "请选择一项操作。",
+      "text": "Please choose an action.",
       "choices": []
     },
     "flint": {
-      "text": "请选择一项操作。",
+      "text": "Please choose an action.",
       "choices": []
     },
     "gambler": {
-      "text": "请选择一项操作。",
+      "text": "Please choose an action.",
       "choices": []
     },
     "cashier": {
-      "text": "请选择一项操作。",
+      "text": "Please choose an action.",
       "choices": []
     },
     "gambler-dispute": {
-      "text": "请选择一项操作。",
+      "text": "Please choose an action.",
       "choices": []
     }
   }

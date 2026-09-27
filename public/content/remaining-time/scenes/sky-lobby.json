@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "content_version": "room-world-1-box-sky-lobby",
   "id": "sky-lobby",
-  "name": "私人电梯厅",
+  "name": "Private Elevator Hall",
   "map": {
     "source": "maps/sky-lobby.json"
   },
@@ -14,7 +14,7 @@
   "entities": [
     {
       "id": "sky-lobby.return",
-      "name": "返回",
+      "name": "Back",
       "position": [22, 29],
       "portalTiles": [
         [22, 29],
@@ -34,7 +34,7 @@
     },
     {
       "id": "sky-lobby.lift",
-      "name": "电梯 → 转运厅",
+      "name": "Elevator → Transit Hall",
       "position": [24, 8],
       "portalTiles": [
         [24, 8],
@@ -52,7 +52,7 @@
     },
     {
       "id": "receptionist",
-      "name": "接待员",
+      "name": "Receptionist",
       "position": [15, 17],
       "character": "sprite",
       "sprite": {

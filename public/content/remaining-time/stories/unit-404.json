@@ -5,11 +5,11 @@
   "vars": {},
   "interactions": {
     "unit-404.bed": {
-      "text": "床铺已经整理好，可以在这里睡一觉。睡眠会消耗经过的余时。",
+      "text": "The bed is made. You can sleep here. Sleeping consumes the time that passes.",
       "choices": [
         {
           "id": "sleep",
-          "text": "睡觉",
+          "text": "Sleep",
           "effects": [{ "op": "sleep", "selectHours": true }]
         }
       ]

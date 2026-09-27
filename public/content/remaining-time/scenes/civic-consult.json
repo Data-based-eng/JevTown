@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "content_version": "room-world-2-npc-menu",
   "id": "civic-consult",
-  "name": "合约咨询室",
+  "name": "Contract Consultation Room",
   "map": {
     "source": "maps/civic-consult.json"
   },
@@ -13,7 +13,7 @@
   "entities": [
     {
       "id": "civic-consult.return",
-      "name": "返回",
+      "name": "Back",
       "position": [7, 16],
       "portalTiles": [[7, 16]],
       "character": "sprite",

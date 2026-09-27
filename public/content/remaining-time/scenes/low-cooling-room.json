@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "content_version": "room-world-1-cooling-furnished-box-1",
   "id": "low-cooling-room",
-  "name": "冷却柱机房（隐藏房间）",
+  "name": "Cooling Pillar Room (Hidden)",
   "map": {
     "source": "maps/low-cooling-room.json"
   },
@@ -13,7 +13,7 @@
   "entities": [
     {
       "id": "low-cooling-room.return",
-      "name": "返回",
+      "name": "Back",
       "position": [22, 27],
       "portalTiles": [
         [22, 27],

@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "content_version": "room-world-1-box-celeste-reception",
   "id": "celeste-reception",
-  "name": "Celeste 宅接待会厅",
+  "name": "Celeste Manor Reception Hall",
   "map": {
     "source": "maps/celeste-reception.json"
   },
@@ -13,7 +13,7 @@
   "entities": [
     {
       "id": "celeste-reception.return",
-      "name": "返回",
+      "name": "Back",
       "position": [21, 29],
       "portalTiles": [
         [21, 29],
@@ -46,7 +46,7 @@
     },
     {
       "id": "waiter",
-      "name": "侍者",
+      "name": "Attendant",
       "position": [31, 14],
       "character": "sprite",
       "sprite": {
@@ -58,7 +58,7 @@
     },
     {
       "id": "collector",
-      "name": "陌生收藏者",
+      "name": "Strange Collector",
       "position": [14, 21],
       "character": "sprite",
       "sprite": {

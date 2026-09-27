@@ -68,7 +68,7 @@ export default function GameFrame({
       else await frame.current?.requestFullscreen();
       closeMenu();
     } catch {
-      setError('无法进入全屏，请检查浏览器权限。');
+      setError('Cannot enter fullscreen; check browser permissions.');
     }
   };
   return (
@@ -95,8 +95,8 @@ export default function GameFrame({
       >
         <summary
           ref={menuButton}
-          aria-label="游戏设置"
-          title="游戏设置"
+          aria-label="Game Settings"
+          title="Game Settings"
           className="ml-auto flex h-11 w-11 cursor-pointer list-none items-center justify-center border border-brown-500 bg-brown-900 text-xl focus-visible:outline focus-visible:outline-2 [&::-webkit-details-marker]:hidden"
         >
           <span aria-hidden="true">⚙</span>
@@ -111,7 +111,7 @@ export default function GameFrame({
               closeMenu();
             }}
           >
-            {panelOpen ? '收起信息面板' : '展开信息面板'}
+            {panelOpen ? 'Collapse info panel' : 'Expand info panel'}
           </button>
           {document.fullscreenEnabled && (
             <button
@@ -119,7 +119,7 @@ export default function GameFrame({
               aria-pressed={fullscreen}
               onClick={toggleFullscreen}
             >
-              {fullscreen ? '退出全屏' : '进入全屏'}
+              {fullscreen ? 'Exit fullscreen' : 'Enter fullscreen'}
             </button>
           )}
           {menuItems}

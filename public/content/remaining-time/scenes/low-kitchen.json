@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "content_version": "room-world-1-kitchen-furnished-box-1",
   "id": "low-kitchen",
-  "name": "公共厨房",
+  "name": "Common Kitchen",
   "map": {
     "source": "maps/low-kitchen.json"
   },
@@ -13,7 +13,7 @@
   "entities": [
     {
       "id": "low-kitchen.return",
-      "name": "返回",
+      "name": "Back",
       "position": [21, 29],
       "portalTiles": [
         [21, 29],
@@ -47,7 +47,7 @@
     },
     {
       "id": "resident",
-      "name": "居民",
+      "name": "Resident",
       "position": [12, 20],
       "character": "sprite",
       "sprite": {

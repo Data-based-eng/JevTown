@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "content_version": "room-world-1-rhea-furnished-box-1",
   "id": "rhea-den",
-  "name": "Rhea 的补时铺（中继器）",
+  "name": "Rhea's Time Top-Up Shop (Relay)",
   "map": {
     "source": "maps/rhea-den.json"
   },
@@ -13,7 +13,7 @@
   "entities": [
     {
       "id": "rhea-den.return",
-      "name": "返回",
+      "name": "Back",
       "position": [21, 30],
       "portalTiles": [
         [21, 30],

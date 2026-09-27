@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "content_version": "room-world-2-npc-menu",
   "id": "embers-lounge",
-  "name": "休息间",
+  "name": "Lounge",
   "map": {
     "source": "maps/embers-lounge.json"
   },
@@ -13,7 +13,7 @@
   "entities": [
     {
       "id": "embers-lounge.return",
-      "name": "返回",
+      "name": "Back",
       "position": [42, 16],
       "portalTiles": [
         [42, 16],

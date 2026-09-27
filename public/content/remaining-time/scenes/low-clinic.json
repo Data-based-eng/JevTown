@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "content_version": "room-world-1-clinic-furnished-box-1",
   "id": "low-clinic",
-  "name": "基础诊所",
+  "name": "Basic Clinic",
   "map": {
     "source": "maps/low-clinic.json"
   },
@@ -13,7 +13,7 @@
   "entities": [
     {
       "id": "low-clinic.return",
-      "name": "返回",
+      "name": "Back",
       "position": [21, 28],
       "portalTiles": [
         [21, 28],
@@ -35,7 +35,7 @@
     },
     {
       "id": "nurse",
-      "name": "值班护士",
+      "name": "Duty Nurse",
       "position": [32, 19],
       "character": "sprite",
       "sprite": {

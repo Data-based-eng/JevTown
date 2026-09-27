@@ -5,11 +5,11 @@
   "vars": {},
   "interactions": {
     "unit-404.return": {
-      "text": "通往下层回廊。",
+      "text": "Leads to Lower Corridor.",
       "choices": [
         {
           "id": "travel",
-          "text": "前往下层回廊",
+          "text": "Go to Lower Corridor",
           "effects": [
             {
               "op": "travel"
@@ -19,11 +19,11 @@
       ]
     },
     "low-deck.to-transit": {
-      "text": "通往转运厅。",
+      "text": "Leads to Transit Hall.",
       "choices": [
         {
           "id": "travel",
-          "text": "前往转运厅",
+          "text": "Go to Transit Hall",
           "effects": [
             {
               "op": "travel"
@@ -33,11 +33,11 @@
       ]
     },
     "low-deck.enter-404": {
-      "text": "通往404 号舱。",
+      "text": "Leads to Cabin 404.",
       "choices": [
         {
           "id": "travel",
-          "text": "前往404 号舱",
+          "text": "Go to Cabin 404",
           "effects": [
             {
               "op": "travel"
@@ -47,11 +47,11 @@
       ]
     },
     "low-deck.enter-kitchen": {
-      "text": "通往公共厨房。",
+      "text": "Leads to Common Kitchen.",
       "choices": [
         {
           "id": "travel",
-          "text": "前往公共厨房",
+          "text": "Go to Common Kitchen",
           "effects": [
             {
               "op": "travel"
@@ -61,11 +61,11 @@
       ]
     },
     "low-deck.enter-rhea": {
-      "text": "通往Rhea 的补时铺（中继器）。",
+      "text": "Leads to Rhea's Time Top-Up Shop (Relay).",
       "choices": [
         {
           "id": "travel",
-          "text": "前往Rhea 的补时铺（中继器）",
+          "text": "Go to Rhea's Time Top-Up Shop (Relay)",
           "effects": [
             {
               "op": "travel"
@@ -75,11 +75,11 @@
       ]
     },
     "low-deck.enter-clinic": {
-      "text": "通往基础诊所。",
+      "text": "Leads to Basic Clinic.",
       "choices": [
         {
           "id": "travel",
-          "text": "前往基础诊所",
+          "text": "Go to Basic Clinic",
           "effects": [
             {
               "op": "travel"
@@ -89,11 +89,11 @@
       ]
     },
     "low-deck.laundry-a": {
-      "text": "通往旧洗衣管道。",
+      "text": "Leads to Old Laundry Duct.",
       "choices": [
         {
           "id": "travel",
-          "text": "前往旧洗衣管道",
+          "text": "Go to Old Laundry Duct",
           "effects": [
             {
               "op": "travel"
@@ -103,11 +103,11 @@
       ]
     },
     "low-deck.laundry-b": {
-      "text": "通往旧洗衣管道。",
+      "text": "Leads to Old Laundry Duct.",
       "choices": [
         {
           "id": "travel",
-          "text": "前往旧洗衣管道",
+          "text": "Go to Old Laundry Duct",
           "effects": [
             {
               "op": "travel"
@@ -117,11 +117,11 @@
       ]
     },
     "low-deck.duct-b": {
-      "text": "通往检修捷径。",
+      "text": "Leads to Maintenance Shortcut.",
       "choices": [
         {
           "id": "travel",
-          "text": "前往检修捷径",
+          "text": "Go to Maintenance Shortcut",
           "effects": [
             {
               "op": "travel"
@@ -131,11 +131,11 @@
       ]
     },
     "low-kitchen.return": {
-      "text": "通往下层回廊。",
+      "text": "Leads to Lower Corridor.",
       "choices": [
         {
           "id": "travel",
-          "text": "前往下层回廊",
+          "text": "Go to Lower Corridor",
           "effects": [
             {
               "op": "travel"
@@ -145,11 +145,11 @@
       ]
     },
     "low-clinic.return": {
-      "text": "通往下层回廊。",
+      "text": "Leads to Lower Corridor.",
       "choices": [
         {
           "id": "travel",
-          "text": "前往下层回廊",
+          "text": "Go to Lower Corridor",
           "effects": [
             {
               "op": "travel"
@@ -159,11 +159,11 @@
       ]
     },
     "rhea-den.return": {
-      "text": "通往下层回廊。",
+      "text": "Leads to Lower Corridor.",
       "choices": [
         {
           "id": "travel",
-          "text": "前往下层回廊",
+          "text": "Go to Lower Corridor",
           "effects": [
             {
               "op": "travel"
@@ -173,11 +173,11 @@
       ]
     },
     "low-service-duct.east": {
-      "text": "通往下层回廊。",
+      "text": "Leads to Lower Corridor.",
       "choices": [
         {
           "id": "travel",
-          "text": "前往下层回廊",
+          "text": "Go to Lower Corridor",
           "effects": [
             {
               "op": "travel"
@@ -187,11 +187,11 @@
       ]
     },
     "low-service-duct.to-cooling": {
-      "text": "通往冷却柱机房（隐藏房间）。",
+      "text": "Leads to Cooling Pillar Room (Hidden).",
       "choices": [
         {
           "id": "travel",
-          "text": "前往冷却柱机房（隐藏房间）",
+          "text": "Go to Cooling Pillar Room (Hidden)",
           "effects": [
             {
               "op": "travel"
@@ -201,11 +201,11 @@
       ]
     },
     "low-laundry-duct.west": {
-      "text": "通往下层回廊。",
+      "text": "Leads to Lower Corridor.",
       "choices": [
         {
           "id": "travel",
-          "text": "前往下层回廊",
+          "text": "Go to Lower Corridor",
           "effects": [
             {
               "op": "travel"
@@ -215,11 +215,11 @@
       ]
     },
     "low-laundry-duct.east": {
-      "text": "通往下层回廊。",
+      "text": "Leads to Lower Corridor.",
       "choices": [
         {
           "id": "travel",
-          "text": "前往下层回廊",
+          "text": "Go to Lower Corridor",
           "effects": [
             {
               "op": "travel"
@@ -229,11 +229,11 @@
       ]
     },
     "low-cooling-room.return": {
-      "text": "通往检修捷径。",
+      "text": "Leads to Maintenance Shortcut.",
       "choices": [
         {
           "id": "travel",
-          "text": "前往检修捷径",
+          "text": "Go to Maintenance Shortcut",
           "effects": [
             {
               "op": "travel"
@@ -243,11 +243,11 @@
       ]
     },
     "transit-hall.to-solarium": {
-      "text": "通往私人电梯厅。",
+      "text": "Leads to Private Elevator Hall.",
       "choices": [
         {
           "id": "travel",
-          "text": "前往私人电梯厅",
+          "text": "Go to Private Elevator Hall",
           "effects": [
             {
               "op": "travel"
@@ -257,11 +257,11 @@
       ]
     },
     "transit-hall.to-low": {
-      "text": "通往下层回廊。",
+      "text": "Leads to Lower Corridor.",
       "choices": [
         {
           "id": "travel",
-          "text": "前往下层回廊",
+          "text": "Go to Lower Corridor",
           "effects": [
             {
               "op": "travel"
@@ -271,11 +271,11 @@
       ]
     },
     "transit-hall.to-civic": {
-      "text": "通往计时所大厅。",
+      "text": "Leads to Timekeeping Office Hall.",
       "choices": [
         {
           "id": "travel",
-          "text": "前往计时所大厅",
+          "text": "Go to Timekeeping Office Hall",
           "effects": [
             {
               "op": "travel"
@@ -285,11 +285,11 @@
       ]
     },
     "transit-hall.to-embers": {
-      "text": "通往余烬公开赌桌大厅。",
+      "text": "Leads to Embers Open Gaming Hall.",
       "choices": [
         {
           "id": "travel",
-          "text": "前往余烬公开赌桌大厅",
+          "text": "Go to Embers Open Gaming Hall",
           "effects": [
             {
               "op": "travel"
@@ -299,11 +299,11 @@
       ]
     },
     "civic-office.return": {
-      "text": "通往转运厅。",
+      "text": "Leads to Transit Hall.",
       "choices": [
         {
           "id": "travel",
-          "text": "前往转运厅",
+          "text": "Go to Transit Hall",
           "effects": [
             {
               "op": "travel"
@@ -313,11 +313,11 @@
       ]
     },
     "civic-office.to-archive": {
-      "text": "通往封存区。",
+      "text": "Leads to Sealed Archives.",
       "choices": [
         {
           "id": "travel",
-          "text": "前往封存区",
+          "text": "Go to Sealed Archives",
           "effects": [
             {
               "op": "travel"
@@ -327,11 +327,11 @@
       ]
     },
     "civic-office.to-mediation": {
-      "text": "通往争议调解室。",
+      "text": "Leads to Dispute Mediation Room.",
       "choices": [
         {
           "id": "travel",
-          "text": "前往争议调解室",
+          "text": "Go to Dispute Mediation Room",
           "effects": [
             {
               "op": "travel"
@@ -341,11 +341,11 @@
       ]
     },
     "civic-office.to-zeroing": {
-      "text": "通往归零等候区。",
+      "text": "Leads to Zeroing Lounge.",
       "choices": [
         {
           "id": "travel",
-          "text": "前往归零等候区",
+          "text": "Go to Zeroing Lounge",
           "effects": [
             {
               "op": "travel"
@@ -355,11 +355,11 @@
       ]
     },
     "civic-office.to-consult": {
-      "text": "通往合约咨询室。",
+      "text": "Leads to Contract Consultation Room.",
       "choices": [
         {
           "id": "travel",
-          "text": "前往合约咨询室",
+          "text": "Go to Contract Consultation Room",
           "effects": [
             {
               "op": "travel"
@@ -369,11 +369,11 @@
       ]
     },
     "civic-mediation.return": {
-      "text": "通往计时所大厅。",
+      "text": "Leads to Timekeeping Office Hall.",
       "choices": [
         {
           "id": "travel",
-          "text": "前往计时所大厅",
+          "text": "Go to Timekeeping Office Hall",
           "effects": [
             {
               "op": "travel"
@@ -383,11 +383,11 @@
       ]
     },
     "civic-consult.return": {
-      "text": "通往计时所大厅。",
+      "text": "Leads to Timekeeping Office Hall.",
       "choices": [
         {
           "id": "travel",
-          "text": "前往计时所大厅",
+          "text": "Go to Timekeeping Office Hall",
           "effects": [
             {
               "op": "travel"
@@ -397,11 +397,11 @@
       ]
     },
     "civic-zeroing-lounge.return": {
-      "text": "通往计时所大厅。",
+      "text": "Leads to Timekeeping Office Hall.",
       "choices": [
         {
           "id": "travel",
-          "text": "前往计时所大厅",
+          "text": "Go to Timekeeping Office Hall",
           "effects": [
             {
               "op": "travel"
@@ -411,11 +411,11 @@
       ]
     },
     "civic-archive.return": {
-      "text": "通往计时所大厅。",
+      "text": "Leads to Timekeeping Office Hall.",
       "choices": [
         {
           "id": "travel",
-          "text": "前往计时所大厅",
+          "text": "Go to Timekeeping Office Hall",
           "effects": [
             {
               "op": "travel"
@@ -425,11 +425,11 @@
       ]
     },
     "solarium.enter-lobby": {
-      "text": "通往私人电梯厅。",
+      "text": "Leads to Private Elevator Hall.",
       "choices": [
         {
           "id": "travel",
-          "text": "前往私人电梯厅",
+          "text": "Go to Private Elevator Hall",
           "effects": [
             {
               "op": "travel"
@@ -439,11 +439,11 @@
       ]
     },
     "solarium.enter-reception": {
-      "text": "通往Celeste 宅接待会厅。",
+      "text": "Leads to Celeste Manor Reception Hall.",
       "choices": [
         {
           "id": "travel",
-          "text": "前往Celeste 宅接待会厅",
+          "text": "Go to Celeste Manor Reception Hall",
           "effects": [
             {
               "op": "travel"
@@ -453,11 +453,11 @@
       ]
     },
     "solarium.enter-gallery": {
-      "text": "通往展厅与估值台。",
+      "text": "Leads to Gallery & Appraisal Desk.",
       "choices": [
         {
           "id": "travel",
-          "text": "前往展厅与估值台",
+          "text": "Go to Gallery & Appraisal Desk",
           "effects": [
             {
               "op": "travel"
@@ -467,11 +467,11 @@
       ]
     },
     "solarium.enter-archive": {
-      "text": "通往档案室 / 收藏库。",
+      "text": "Leads to Archives / Collection Vault.",
       "choices": [
         {
           "id": "travel",
-          "text": "前往档案室 / 收藏库",
+          "text": "Go to Archives / Collection Vault",
           "effects": [
             {
               "op": "travel"
@@ -481,11 +481,11 @@
       ]
     },
     "solarium.enter-noel": {
-      "text": "通往Noel 的私人厅。",
+      "text": "Leads to Noel's Private Lounge.",
       "choices": [
         {
           "id": "travel",
-          "text": "前往Noel 的私人厅",
+          "text": "Go to Noel's Private Lounge",
           "effects": [
             {
               "op": "travel"
@@ -495,11 +495,11 @@
       ]
     },
     "solarium.bridge-tower": {
-      "text": "通往屋顶一天花园。",
+      "text": "Leads to Rooftop One-Day Garden.",
       "choices": [
         {
           "id": "travel",
-          "text": "前往屋顶一天花园",
+          "text": "Go to Rooftop One-Day Garden",
           "effects": [
             {
               "op": "travel"
@@ -509,11 +509,11 @@
       ]
     },
     "solarium.service-lift": {
-      "text": "通往屋顶一天花园。",
+      "text": "Leads to Rooftop One-Day Garden.",
       "choices": [
         {
           "id": "travel",
-          "text": "前往屋顶一天花园",
+          "text": "Go to Rooftop One-Day Garden",
           "effects": [
             {
               "op": "travel"
@@ -523,11 +523,11 @@
       ]
     },
     "sky-lobby.return": {
-      "text": "通往高层天井。",
+      "text": "Leads to Upper Atrium.",
       "choices": [
         {
           "id": "travel",
-          "text": "前往高层天井",
+          "text": "Go to Upper Atrium",
           "effects": [
             {
               "op": "travel"
@@ -537,11 +537,11 @@
       ]
     },
     "sky-lobby.lift": {
-      "text": "通往转运厅。",
+      "text": "Leads to Transit Hall.",
       "choices": [
         {
           "id": "travel",
-          "text": "前往转运厅",
+          "text": "Go to Transit Hall",
           "effects": [
             {
               "op": "travel"
@@ -551,11 +551,11 @@
       ]
     },
     "celeste-reception.return": {
-      "text": "通往高层天井。",
+      "text": "Leads to Upper Atrium.",
       "choices": [
         {
           "id": "travel",
-          "text": "前往高层天井",
+          "text": "Go to Upper Atrium",
           "effects": [
             {
               "op": "travel"
@@ -565,11 +565,11 @@
       ]
     },
     "celeste-gallery.return": {
-      "text": "通往高层天井。",
+      "text": "Leads to Upper Atrium.",
       "choices": [
         {
           "id": "travel",
-          "text": "前往高层天井",
+          "text": "Go to Upper Atrium",
           "effects": [
             {
               "op": "travel"
@@ -579,11 +579,11 @@
       ]
     },
     "celeste-archive.return": {
-      "text": "通往高层天井。",
+      "text": "Leads to Upper Atrium.",
       "choices": [
         {
           "id": "travel",
-          "text": "前往高层天井",
+          "text": "Go to Upper Atrium",
           "effects": [
             {
               "op": "travel"
@@ -593,11 +593,11 @@
       ]
     },
     "noel-suite.return": {
-      "text": "通往高层天井。",
+      "text": "Leads to Upper Atrium.",
       "choices": [
         {
           "id": "travel",
-          "text": "前往高层天井",
+          "text": "Go to Upper Atrium",
           "effects": [
             {
               "op": "travel"
@@ -607,11 +607,11 @@
       ]
     },
     "one-day-garden.bridge-entry": {
-      "text": "通往高层天井。",
+      "text": "Leads to Upper Atrium.",
       "choices": [
         {
           "id": "travel",
-          "text": "前往高层天井",
+          "text": "Go to Upper Atrium",
           "effects": [
             {
               "op": "travel"
@@ -621,11 +621,11 @@
       ]
     },
     "one-day-garden.lift-entry": {
-      "text": "通往高层天井。",
+      "text": "Leads to Upper Atrium.",
       "choices": [
         {
           "id": "travel",
-          "text": "前往高层天井",
+          "text": "Go to Upper Atrium",
           "effects": [
             {
               "op": "travel"
@@ -635,11 +635,11 @@
       ]
     },
     "one-day-garden.to-vault": {
-      "text": "通往花园维护层密室。",
+      "text": "Leads to Garden Maintenance Vault.",
       "choices": [
         {
           "id": "travel",
-          "text": "前往花园维护层密室",
+          "text": "Go to Garden Maintenance Vault",
           "effects": [
             {
               "op": "travel"
@@ -649,11 +649,11 @@
       ]
     },
     "garden-vault.return": {
-      "text": "通往屋顶一天花园。",
+      "text": "Leads to Rooftop One-Day Garden.",
       "choices": [
         {
           "id": "travel",
-          "text": "前往屋顶一天花园",
+          "text": "Go to Rooftop One-Day Garden",
           "effects": [
             {
               "op": "travel"
@@ -663,11 +663,11 @@
       ]
     },
     "embers-floor.return": {
-      "text": "通往转运厅。",
+      "text": "Leads to Transit Hall.",
       "choices": [
         {
           "id": "travel",
-          "text": "前往转运厅",
+          "text": "Go to Transit Hall",
           "effects": [
             {
               "op": "travel"
@@ -677,11 +677,11 @@
       ]
     },
     "embers-floor.to-backstage": {
-      "text": "通往后台 / Lyra 化妆间。",
+      "text": "Leads to Backstage / Lyra's Dressing Room.",
       "choices": [
         {
           "id": "travel",
-          "text": "前往后台 / Lyra 化妆间",
+          "text": "Go to Backstage / Lyra's Dressing Room",
           "effects": [
             {
               "op": "travel"
@@ -691,11 +691,11 @@
       ]
     },
     "embers-floor.to-office": {
-      "text": "通往Rook 的账房。",
+      "text": "Leads to Rook's Counting Room.",
       "choices": [
         {
           "id": "travel",
-          "text": "前往Rook 的账房",
+          "text": "Go to Rook's Counting Room",
           "effects": [
             {
               "op": "travel"
@@ -705,11 +705,11 @@
       ]
     },
     "embers-floor.to-lounge": {
-      "text": "通往休息间。",
+      "text": "Leads to Lounge.",
       "choices": [
         {
           "id": "travel",
-          "text": "前往休息间",
+          "text": "Go to Lounge",
           "effects": [
             {
               "op": "travel"
@@ -719,11 +719,11 @@
       ]
     },
     "embers-lounge.return": {
-      "text": "通往余烬公开赌桌大厅。",
+      "text": "Leads to Embers Open Gaming Hall.",
       "choices": [
         {
           "id": "travel",
-          "text": "前往余烬公开赌桌大厅",
+          "text": "Go to Embers Open Gaming Hall",
           "effects": [
             {
               "op": "travel"
@@ -733,11 +733,11 @@
       ]
     },
     "embers-backstage.return": {
-      "text": "通往余烬公开赌桌大厅。",
+      "text": "Leads to Embers Open Gaming Hall.",
       "choices": [
         {
           "id": "travel",
-          "text": "前往余烬公开赌桌大厅",
+          "text": "Go to Embers Open Gaming Hall",
           "effects": [
             {
               "op": "travel"
@@ -747,11 +747,11 @@
       ]
     },
     "embers-back-office.return": {
-      "text": "通往余烬公开赌桌大厅。",
+      "text": "Leads to Embers Open Gaming Hall.",
       "choices": [
         {
           "id": "travel",
-          "text": "前往余烬公开赌桌大厅",
+          "text": "Go to Embers Open Gaming Hall",
           "effects": [
             {
               "op": "travel"

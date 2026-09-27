@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "content_version": "low-deck-s01-guided-1",
   "id": "low-deck",
-  "name": "下层回廊",
+  "name": "Lower Corridor",
   "map": {
     "source": "maps/low-deck.json"
   },
@@ -20,7 +20,7 @@
   "entities": [
     {
       "id": "low-deck.to-transit",
-      "name": "货运梯 → 转运厅",
+      "name": "Freight Lift → Transit Hall",
       "position": [28, 7],
       "portalTiles": [
         [28, 7],
@@ -39,7 +39,7 @@
     },
     {
       "id": "low-deck.enter-404",
-      "name": "404 号舱",
+      "name": "Cabin 404",
       "position": [7, 8],
       "portalTiles": [[7, 8]],
       "character": "sprite",
@@ -54,7 +54,7 @@
     },
     {
       "id": "low-deck.enter-kitchen",
-      "name": "公共厨房",
+      "name": "Common Kitchen",
       "position": [39, 8],
       "portalTiles": [
         [39, 8],
@@ -72,7 +72,7 @@
     },
     {
       "id": "low-deck.enter-rhea",
-      "name": "Rhea 的补时铺",
+      "name": "Rhea's Time Top-Up Shop",
       "position": [14, 8],
       "portalTiles": [[14, 8]],
       "character": "sprite",
@@ -87,7 +87,7 @@
     },
     {
       "id": "low-deck.enter-clinic",
-      "name": "基础诊所",
+      "name": "Basic Clinic",
       "position": [20, 8],
       "portalTiles": [
         [20, 8],
@@ -105,7 +105,7 @@
     },
     {
       "id": "low-deck.laundry-a",
-      "name": "旧洗衣管道（舱房层端）",
+      "name": "Old Laundry Duct (Cabin End)",
       "position": [5, 17],
       "portalTiles": [
         [5, 17],
@@ -124,7 +124,7 @@
     },
     {
       "id": "low-deck.laundry-b",
-      "name": "旧洗衣管道（广场端）",
+      "name": "Old Laundry Duct (Plaza End)",
       "position": [42, 17],
       "portalTiles": [
         [42, 17],
@@ -142,7 +142,7 @@
     },
     {
       "id": "low-deck.duct-b",
-      "name": "南侧检修井",
+      "name": "South Maintenance Shaft",
       "position": [16, 28],
       "portalTiles": [
         [16, 28],
@@ -162,7 +162,7 @@
     },
     {
       "id": "low-deck.door-tag-317",
-      "name": "317 消磁门牌",
+      "name": "317 Demagnetized Door Plate",
       "position": [8, 10],
       "interactionOffsets": [
         [-1, 1],
@@ -213,7 +213,7 @@
     },
     {
       "id": "bio-swift",
-      "name": "仿生雨燕",
+      "name": "Bionic Swift",
       "position": [18, 29],
       "character": "sprite",
       "sprite": {
@@ -225,7 +225,7 @@
     },
     {
       "id": "resident-door",
-      "name": "陌生住户",
+      "name": "Unknown Resident",
       "position": [13, 12],
       "character": "sprite",
       "sprite": {

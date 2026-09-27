@@ -7,7 +7,7 @@ export type Gain = {
   image?: string;
   kind?: 'task' | 'task-progress' | 'task-complete';
 };
-const taskLabels = { task: '新任务', 'task-progress': '任务更新', 'task-complete': '任务完成' };
+const taskLabels = { task: 'New Task', 'task-progress': 'Task Update', 'task-complete': 'Task Complete' };
 type Notice = Gain & { id: number; createdAt: number };
 
 function GainRow({ notice }: { notice: Notice }) {
@@ -110,7 +110,7 @@ export function useGainNotifications() {
   const view = (
     <section
       className="gain-notifications"
-      aria-label="动态提示"
+      aria-label="Live notifications"
       role="log"
       aria-live="polite"
       aria-relevant="additions"
@@ -118,7 +118,7 @@ export function useGainNotifications() {
     >
       {notices.length > 0 && (
         <>
-          <p className="gain-title">{notices.some((n) => n.kind) ? '提示' : '获得'}</p>
+          <p className="gain-title">{notices.some((n) => n.kind) ? 'Notice' : 'Gained'}</p>
           <div className="gain-list">
             {notices.map((notice) => (
               <GainRow key={notice.id} notice={notice} />

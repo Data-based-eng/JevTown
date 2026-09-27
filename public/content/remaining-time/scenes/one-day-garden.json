@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "content_version": "room-world-2-npc-menu",
   "id": "one-day-garden",
-  "name": "屋顶一天花园",
+  "name": "Rooftop One-Day Garden",
   "map": {
     "source": "maps/one-day-garden.json"
   },
@@ -15,7 +15,7 @@
   "entities": [
     {
       "id": "one-day-garden.bridge-entry",
-      "name": "栈桥入口",
+      "name": "Skybridge Entrance",
       "position": [7, 25],
       "portalTiles": [
         [7, 25],
@@ -33,7 +33,7 @@
     },
     {
       "id": "one-day-garden.lift-entry",
-      "name": "服务电梯入口",
+      "name": "Service Elevator Entrance",
       "position": [39, 27],
       "portalTiles": [[39, 27]],
       "character": "sprite",
@@ -48,7 +48,7 @@
     },
     {
       "id": "one-day-garden.to-vault",
-      "name": "维护层密室",
+      "name": "Maintenance Vault",
       "position": [24, 6],
       "portalTiles": [
         [24, 6],

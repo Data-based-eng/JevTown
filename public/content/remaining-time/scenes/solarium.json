@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "content_version": "room-world-2-npc-menu",
   "id": "solarium",
-  "name": "高层天井",
+  "name": "Upper Atrium",
   "map": {
     "source": "maps/solarium.json"
   },
@@ -19,7 +19,7 @@
   "entities": [
     {
       "id": "solarium.enter-lobby",
-      "name": "私人电梯厅",
+      "name": "Private Elevator Hall",
       "position": [24, 25],
       "portalTiles": [
         [24, 25],
@@ -37,7 +37,7 @@
     },
     {
       "id": "solarium.enter-reception",
-      "name": "Celeste 宅接待会厅",
+      "name": "Celeste Manor Reception Hall",
       "position": [6, 9],
       "portalTiles": [
         [6, 9],
@@ -55,7 +55,7 @@
     },
     {
       "id": "solarium.enter-gallery",
-      "name": "展厅与估值台",
+      "name": "Gallery & Appraisal Desk",
       "position": [18, 9],
       "portalTiles": [[18, 9]],
       "character": "sprite",
@@ -70,7 +70,7 @@
     },
     {
       "id": "solarium.enter-archive",
-      "name": "档案室",
+      "name": "Archives",
       "position": [6, 17],
       "portalTiles": [[6, 17]],
       "character": "sprite",
@@ -85,7 +85,7 @@
     },
     {
       "id": "solarium.enter-noel",
-      "name": "Noel 的私人厅",
+      "name": "Noel's Private Lounge",
       "position": [39, 8],
       "portalTiles": [
         [39, 8],
@@ -103,7 +103,7 @@
     },
     {
       "id": "solarium.bridge-tower",
-      "name": "栈桥 → 屋顶花园",
+      "name": "Skybridge → Rooftop Garden",
       "position": [28, 5],
       "portalTiles": [
         [28, 5],
@@ -122,7 +122,7 @@
     },
     {
       "id": "solarium.service-lift",
-      "name": "服务电梯 → 屋顶花园",
+      "name": "Service Elevator → Rooftop Garden",
       "position": [42, 17],
       "portalTiles": [
         [42, 17],

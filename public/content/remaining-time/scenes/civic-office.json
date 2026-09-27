@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "content_version": "room-world-2-npc-menu",
   "id": "civic-office",
-  "name": "计时所大厅",
+  "name": "Timekeeping Office Hall",
   "map": {
     "source": "maps/civic-office.json"
   },
@@ -17,7 +17,7 @@
   "entities": [
     {
       "id": "civic-office.return",
-      "name": "返回",
+      "name": "Back",
       "position": [46, 22],
       "portalTiles": [
         [46, 22],
@@ -35,7 +35,7 @@
     },
     {
       "id": "civic-office.to-archive",
-      "name": "封存区",
+      "name": "Sealed Archives",
       "position": [41, 7],
       "portalTiles": [
         [41, 7],
@@ -53,7 +53,7 @@
     },
     {
       "id": "civic-office.to-mediation",
-      "name": "争议调解室",
+      "name": "Dispute Mediation Room",
       "position": [1, 15],
       "portalTiles": [
         [1, 15],
@@ -71,7 +71,7 @@
     },
     {
       "id": "civic-office.to-zeroing",
-      "name": "归零等候区",
+      "name": "Zeroing Lounge",
       "position": [1, 21],
       "portalTiles": [
         [1, 21],
@@ -89,7 +89,7 @@
     },
     {
       "id": "civic-office.to-consult",
-      "name": "合约咨询室",
+      "name": "Contract Consultation Room",
       "position": [46, 15],
       "portalTiles": [
         [46, 15],
@@ -131,7 +131,7 @@
     },
     {
       "id": "elder",
-      "name": "陌生老人",
+      "name": "Strange Elder",
       "position": [40, 20],
       "character": "sprite",
       "sprite": {
@@ -143,7 +143,7 @@
     },
     {
       "id": "clerk",
-      "name": "实习柜员",
+      "name": "Intern Clerk",
       "position": [14, 10],
       "character": "sprite",
       "sprite": {
@@ -155,7 +155,7 @@
     },
     {
       "id": "guard",
-      "name": "安检保安",
+      "name": "Security Guard",
       "position": [42, 10],
       "character": "sprite",
       "sprite": {
@@ -167,7 +167,7 @@
     },
     {
       "id": "resident-queue",
-      "name": "排队居民",
+      "name": "Queuing Resident",
       "position": [29, 17],
       "character": "sprite",
       "sprite": {
