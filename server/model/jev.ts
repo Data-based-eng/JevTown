@@ -31,11 +31,69 @@ export function getJevConfig(): JevConfig {
   };
 }
 
+/** Which System One backend answers a call: TypeSafe's cloud Jev, or the local laya-server. */
+export type SystemOneBackend = 'laya' | 'jev';
+
+export interface LayaConfig {
+  /** No trailing slash. */
+  url: string;
+  apiKey: string | undefined;
+  model: string;
+}
+
+/**
+ * The local System One backend (docs/13). Deliberately independent of the Jev cloud config
+ * above: pointing the proxy at laya-server must not make the cloud backend unusable, and the
+ * browser's `ACTION_DECIDER` picks which one a `/systemone` call goes to.
+ */
+export function getLayaConfig(): LayaConfig {
+  return {
+    url: (process.env.LAYA_ENDPOINT ?? 'http://127.0.0.1:8765').replace(/\/+$/, ''),
+    apiKey: process.env.LAYA_API_KEY,
+    // Pinned to the checkpoint fine-tuned on typed decisions, not the rolling `laya` alias.
+    model: process.env.LAYA_MODEL ?? 'laya-typed-decisions',
+  };
+}
+
+/** Liveness probe for the local backend — what `GET /llm/systemone/health` reports. */
+export interface LayaHealth {
+  reachable: boolean;
+  status?: string;
+  loaded?: string[];
+  device?: string;
+  error?: string;
+}
+
+export async function checkLayaHealth(timeoutMs = 2000): Promise<LayaHealth> {
+  const { url } = getLayaConfig();
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), timeoutMs);
+  try {
+    const response = await fetch(url + '/healthz', { signal: controller.signal });
+    if (!response.ok) return { reachable: false, error: `HTTP ${response.status}` };
+    const json = (await response.json()) as {
+      status?: string;
+      loaded?: string[];
+      device?: string;
+    };
+    return { reachable: true, status: json.status, loaded: json.loaded, device: json.device };
+  } catch (error) {
+    return { reachable: false, error: error instanceof Error ? error.message : String(error) };
+  } finally {
+    clearTimeout(timer);
+  }
+}
+
 export interface SystemOneRequest {
   state: unknown;
   questions: SystemOneQuestions;
   model?: string;
   trace?: ChatTrace;
+  /**
+   * Which backend the proxy routes to. The browser's `ACTION_DECIDER`, threaded through so the
+   * proxy doesn't have to guess (docs/13). Absent means the historical default, `'jev'`.
+   */
+  backend?: SystemOneBackend;
 }
 
 export interface SystemOneResponse {
@@ -59,9 +117,11 @@ export function normalizeUsage(usage: unknown): LLMUsage | undefined {
 }
 
 export async function systemOne(body: SystemOneRequest): Promise<SystemOneResponse> {
-  const config = getJevConfig();
-  // `trace` is ours, not the provider's. Split it off before anything serializes it onto the wire.
-  const { trace, ...rest } = body;
+  const backend: SystemOneBackend = body.backend ?? 'jev';
+  const config = backend === 'laya' ? getLayaConfig() : getJevConfig();
+  // `trace` and `backend` are ours, not the provider's. Split them off before anything
+  // serializes them onto the wire.
+  const { trace, backend: _backend, ...rest } = body;
   const request = { ...rest, model: rest.model ?? config.model };
   const startTime = Date.now();
   try {
@@ -69,7 +129,7 @@ export async function systemOne(body: SystemOneRequest): Promise<SystemOneRespon
       // Inside the retry rather than around it, so one attempt that never answers is visibly
       // different from three that failed fast and waited out the backoff. The enclosing
       // `stage()` in `server/index.ts` times the whole thing; this times each try at it.
-      const attempt = watch('jev', `POST ${config.url}/v1/systemone (${request.model})`);
+      const attempt = watch(backend, `POST ${config.url}/v1/systemone (${request.model})`);
       const response = await fetch(config.url + '/v1/systemone', {
         method: 'POST',
         headers: {

@@ -31,17 +31,30 @@ export function mysteryGiftEnabled(): boolean {
   return setting('GOD_MYSTERY_GIFT') === '1';
 }
 
+export type ActionDecider = 'llm' | 'jev' | 'laya';
+
 /**
- * Which decider answers the *action* decision -- what to do next -- the chat model or Jev
- * (docs/12 §2). Named for the decision rather than for the agent, because it is one of several an
+ * Which decider answers the *action* decision -- what to do next -- the chat model or a
+ * System One model (docs/12 §2). Named for the decision rather than for the agent, because it is one of several an
  * agent makes: `ACTION_DECIDER` is a sibling of whatever eventually chooses how state is written.
  *
- * A flag rather than a replacement, because the two are not equivalent — the Jev decider drops the
- * prose the chat one writes. Keeping both selectable is also what makes them comparable: same
- * manifest, same world, one variable.
+ * A flag rather than a replacement, because the two are not equivalent — the System One deciders
+ * drop the prose the chat one writes. Keeping every setting selectable is also what makes them
+ * comparable: same manifest, same world, one variable.
+ *
+ * `laya` is the local System One backend: a laya-server behind the proxy's `JEV_API_URL`, speaking
+ * the same typed-decision request/response shape as Jev (docs/13). Which backend actually answers
+ * a `/systemone` call is a proxy concern, not a browser one — the browser only chooses between
+ * the chat-model branch and the System One branch.
  */
-export function decider(): 'llm' | 'jev' {
-  return setting('ACTION_DECIDER') === 'jev' ? 'jev' : 'llm';
+export function decider(): ActionDecider {
+  const raw = setting('ACTION_DECIDER');
+  return raw === 'jev' || raw === 'laya' ? raw : 'llm';
+}
+
+/** True for both System One backends — Jev and Laya take the same branch (docs/12 §1). */
+export function deciderIsSystemOne(): boolean {
+  return decider() !== 'llm';
 }
 
 /**

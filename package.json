@@ -5,6 +5,8 @@
   "scripts": {
     "play:local": "npm-run-all --parallel proxy vite:local",
     "play:demo": "npm-run-all --parallel proxy vite:demo",
+    "play:laya": "scripts/run-laya.sh",
+    "play:local:jev": "VITE_ACTION_DECIDER=jev npm run play:local",
     "build:local": "vite build --mode memory",
     "prototype": "tsc --target ES2022 --module NodeNext --moduleResolution NodeNext --skipLibCheck --outDir .prototype prototype/world.ts prototype/cli.ts && node .prototype/cli.js",
     "test:prototype": "NODE_OPTIONS=--experimental-vm-modules jest --runInBand tests/engine",

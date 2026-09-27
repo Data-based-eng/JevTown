@@ -486,7 +486,7 @@ function Transcript({
               checked={showDecisions}
               onChange={(e) => setShowDecisions(e.target.checked)}
             />
-            {/* Named for whoever is actually answering: the flag has two settings (docs/12 §2). */}
+            {/* Named for whoever is actually answering: the flag has three settings (docs/12 §2, docs/13). */}
             {decider()} decisions
           </label>
           <label className="flex items-center gap-2">

@@ -27,6 +27,14 @@ accept-prototype:
 play-local:
     npm run play:local
 
+# Fully-local run: Laya (System One decisions) + model proxy + the playable UI.
+play-laya:
+    npm run play:laya
+
+# Cloud Jev decider instead of the local one (needs JEV_API_KEY).
+play-jev:
+    npm run play:local:jev
+
 # Phase 2 checks followed by the playable UI.
 accept-local:
     npm run test:prototype

@@ -15,7 +15,7 @@ import { chatCompletion, systemOne } from './model/client';
 import { Tracer } from './model/tracing';
 import { promptContextFor } from './promptContext';
 import { AgentContext } from './ports';
-import { decider } from './config';
+import { decider, deciderIsSystemOne } from './config';
 
 /**
  * The four things an agent can go away and do.
@@ -163,16 +163,19 @@ export async function agentDecide(
       tags: ['decision', `decider:${decider()}`],
       metadata: { playerId: args.playerId, agentId: args.agentId },
     });
-    // The two deciders of docs/12 §1. Same manifest, same trace shape, same `Decision` out --
-    // which is the whole point of the flag: they are comparable, and neither is load-bearing for
-    // the other. What differs is that the Jev decider returns no prose (docs/12 §2).
-    if (decider() === 'jev') {
+    // The two decider kinds of docs/12 §1 (a System One model -- Jev or Laya -- versus the
+    // chat model). Same manifest, same trace shape, same `Decision` out -- which is the whole
+    // point of the flag: they are comparable, and none is load-bearing for another. What differs
+    // is that the System One deciders return no prose (docs/12 §2).
+    if (deciderIsSystemOne()) {
       const request = jevDecisionRequest(context, manifest);
       const { answers } = await systemOne({
         state: request.state,
         questions: request.questions,
         worldId: ctx.world.worldId,
         trace: tracer.generation('agent.decide'),
+        // Route the proxy at the matching backend (docs/13): the local laya-server, or Jev cloud.
+        backend: decider() === 'laya' ? 'laya' : 'jev',
       });
       ({ decision, problems } = decisionFromAnswers(answers, request, {
         idleStreak: args.idleStreak,

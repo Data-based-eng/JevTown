@@ -2,7 +2,18 @@ import { createServer, IncomingMessage, ServerResponse } from 'node:http';
 import { readFileSync } from 'node:fs';
 import { parse as parseEnv } from 'dotenv';
 import { chatCompletion, fetchEmbeddingBatch, detectMismatchedLLMProvider } from './model/llm.ts';
-import { systemOne, type SystemOneRequest } from './model/jev.ts';
+import {
+  systemOne,
+  type SystemOneRequest,
+  getJevConfig,
+  getLayaConfig,
+  checkLayaHealth,
+} from './model/jev.ts';
+import {
+  createSystemOneStats,
+  recordSystemOneCall,
+  systemOneStatsSnapshot,
+} from './model/systemOneStats.ts';
 import { recordObservation } from './model/langfuse.ts';
 import type { TraceEntry } from '../agent/model/trace.ts';
 import { watch } from '../agent/model/watchdog.ts';
@@ -48,6 +59,10 @@ const WORLD_QUOTA_WINDOW_MS = Number(process.env.MODEL_WORLD_QUOTA_WINDOW_MS) ||
 let callsServed = 0;
 
 let storageReady = false;
+
+// Session-scoped System One metrics live in `./model/systemOneStats.ts` (pure functions, tested);
+// the proxy keeps one process-wide instance here.
+const systemOneStats = createSystemOneStats();
 
 /** Load `.env.local` into the process, without clobbering anything already set. */
 function loadEnv() {
@@ -116,6 +131,29 @@ async function handle(request: IncomingMessage, response: ServerResponse) {
   }
 
   const path = url.pathname.replace(/^\/llm/, '');
+
+  // Free to read and never a model call: the System One session metrics (docs/13 §5). Like
+  // `/trace` it must not count against the cap — a monitoring poll is not a decision.
+  if (request.method === 'GET' && url.pathname === '/llm/systemone/stats') {
+    return send(response, 200, systemOneStatsSnapshot(systemOneStats));
+  }
+
+  // Free to read and never a model call: which System One backend the proxy is configured for,
+  // and whether the local one is alive (docs/13 §5). Like `/stats` it must not count against
+  // the cap — a monitoring poll is not a decision. Keys are never reported here.
+  if (request.method === 'GET' && url.pathname === '/llm/systemone/health') {
+    const laya = await stage('laya /healthz', () => checkLayaHealth());
+    const jev = getJevConfig();
+    const layaConfig = getLayaConfig();
+    return send(response, 200, {
+      backends: {
+        jev: { url: jev.url, model: jev.model },
+        laya: { url: layaConfig.url, model: layaConfig.model },
+      },
+      laya,
+    });
+  }
+
   if (request.method !== 'POST') return send(response, 405, { error: 'POST only' });
 
   // The trace endpoint is free: it writes observability, never a model call, and counting it
@@ -175,7 +213,14 @@ async function handle(request: IncomingMessage, response: ServerResponse) {
     const quota = await stage('quota check (postgres)', () => overQuota(body.worldId));
     if (quota) return send(response, 429, { error: quota });
     const started = Date.now();
-    const result = await stage('upstream /v1/systemone', () => systemOne(body));
+    let result: Awaited<ReturnType<typeof systemOne>>;
+    try {
+      result = await stage('upstream /v1/systemone', () => systemOne(body));
+    } catch (error) {
+      recordSystemOneCall(systemOneStats, undefined, undefined, 0, true);
+      throw error;
+    }
+    recordSystemOneCall(systemOneStats, result.answers, result.model, Date.now() - started, false);
     await logCall({
       worldId: body.worldId,
       purpose: body.trace?.name,

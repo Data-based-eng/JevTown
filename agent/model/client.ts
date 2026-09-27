@@ -145,6 +145,12 @@ export interface SystemOneBody {
   /** Lets the proxy charge this call to a world's quota, as `/chat` does. */
   worldId?: string;
   trace?: ChatTrace;
+  /**
+   * Which System One backend the proxy routes to: `laya` (LAYA_ENDPOINT) or `jev`
+   * (JEV_API_URL). The browser's `ACTION_DECIDER`, threaded through so the proxy doesn't have
+   * to guess (docs/13). Absent means the historical default, `jev`.
+   */
+  backend?: 'laya' | 'jev';
 }
 
 export interface SystemOneResult {
