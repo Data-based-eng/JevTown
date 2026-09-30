@@ -94,8 +94,11 @@ function send(response: ServerResponse, status: number, body: unknown) {
     'Content-Type': 'application/json',
     'Content-Length': Buffer.byteLength(text),
     // Vite proxies `/llm` in development, so same-origin is the normal case. This covers a
-    // separately served frontend without making the proxy interesting to anyone else.
-    'Access-Control-Allow-Origin': process.env.MODEL_PROXY_ORIGIN ?? '*',
+    // separately served frontend (the Vite dev server) without making the proxy interesting
+    // to anyone else: a wildcard origin lets any website the developer visits spend the
+    // provider keys, because `Content-Type: application/json` needs no CORS preflight.
+    // Production pins MODEL_PROXY_ORIGIN to the game origin (see LXC 115 lockdown record).
+    'Access-Control-Allow-Origin': process.env.MODEL_PROXY_ORIGIN ?? 'http://localhost:5173',
     'Access-Control-Allow-Headers': 'Content-Type',
   });
   response.end(text);
@@ -359,6 +362,6 @@ createServer((request, response) => {
       // Never leak a key through an upstream error body.
       send(response, 502, { error: 'Upstream model call failed. See the proxy log.' });
     });
-}).listen(PORT, () => {
+}).listen(PORT, '127.0.0.1', () => {
   console.log(`Model proxy on http://127.0.0.1:${PORT} (cap ${CALL_CAP} calls)`);
 });

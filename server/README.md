@@ -41,7 +41,9 @@ is idempotent — the day there is a second migration file, it becomes a real or
 | variable                      | default                   | meaning                           |
 | ----------------------------- | ------------------------- | --------------------------------- |
 | `DATABASE_URL`                | unset                     | enables the storage routes        |
-| `MODEL_PROXY_PORT`            | 3001                      | where it listens                  |
+| `MODEL_PROXY_PORT`            | 3001                      | where it listens (127.0.0.1 only)     |
+| `MODEL_PROXY_ORIGIN`          | `http://localhost:5173`   | CORS origin; pin to the game origin   |
+|                             |                           | in production (never `*`)             |
 | `MODEL_PROXY_CALL_CAP`        | 2000                      | model calls per process lifetime  |
 | `MODEL_WORLD_QUOTA`           | 1000                      | model calls per world, per window |
 | `MODEL_WORLD_QUOTA_WINDOW_MS` | 1h                        | that window                       |
