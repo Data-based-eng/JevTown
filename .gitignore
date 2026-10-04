@@ -48,3 +48,14 @@ dist
 
 # Local helpers & scripts
 /.local/
+
+# Local secrets & data (never commit)
+.env.*
+*.key
+secrets/
+*.db
+*.sqlite*
+*.sqlite3
+*.log
+!.env.example
+!.env.*.example
