@@ -1,5 +1,9 @@
 # Remaining Time
 
+![Remaining Time hero](assets/readme-hero.png)
+
+> 26 rooms. One mystery. Your choices decide what remains.
+
 A pixel-art narrative game by NevaMind-AI, built around relics, choices, and digital life. It is an
 MVP in progress: TypeScript, React, and PixiJS, running a local world entirely in the browser — no
 backend, no account, and no model service required to play.
